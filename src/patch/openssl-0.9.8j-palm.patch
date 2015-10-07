@@ -1,0 +1,48 @@
+diff -wru openssl-0.9.8j/config openssl-0.9.8k/config
+--- openssl-0.9.8j/config	2007-08-01 13:21:35.000000000 +0200
++++ openssl-0.9.8k/config	2009-02-16 09:43:41.000000000 +0100
+@@ -399,11 +399,8 @@
+ # this is where the translation occurs into SSLeay terms
+ # ---------------------------------------------------------------------------
+ 
+-# figure out if gcc is available and if so we use it otherwise
+-# we fallback to whatever cc does on the system
+ GCCVER=`(gcc -dumpversion) 2>/dev/null`
+ if [ "$GCCVER" != "" ]; then
+-  CC=gcc
+   # then strip off whatever prefix egcs prepends the number with...
+   # Hopefully, this will work for any future prefixes as well.
+   GCCVER=`echo $GCCVER | LC_ALL=C sed 's/^[a-zA-Z]*\-//'`
+@@ -412,9 +409,18 @@
+   # major and minor version numbers.
+   # peak single digit before and after first dot, e.g. 2.95.1 gives 29
+   GCCVER=`echo $GCCVER | sed 's/\([0-9]\)\.\([0-9]\).*/\1\2/'`
++fi
++
++# Only set CC if not supplied already
++if [ -z "$CC" ]; then
++# figure out if gcc is available and if so we use it otherwise
++# we fallback to whatever cc does on the system
++  if [ "$GCCVER" != "" ]; then
++    CC=gcc
+ else
+   CC=cc
+ fi
++fi
+ GCCVER=${GCCVER:-0}
+ if [ "$SYSTEM" = "HP-UX" ];then
+   # By default gcc is a ILP32 compiler (with long long == 64).
+diff -wru openssl-0.9.8j/Configure openssl-0.9.8k/Configure
+--- openssl-0.9.8j/Configure	2008-12-29 01:18:23.000000000 +0100
++++ openssl-0.9.8k/Configure	2009-02-16 09:44:22.000000000 +0100
+@@ -948,6 +953,10 @@
+ 
+ my @fields = split(/\s*:\s*/,$table{$target} . ":" x 30 , -1);
+ my $cc = $fields[$idx_cc];
++# Allow environment CC to override compiler...
++if($ENV{CC}) {
++    $cc = $ENV{CC};
++}
+ my $cflags = $fields[$idx_cflags];
+ my $unistd = $fields[$idx_unistd];
+ my $thread_cflag = $fields[$idx_thread_cflag];

@@ -1,0 +1,21 @@
+{
+  "title": "OpenSSL Updater",
+  "id": "org.webosinternals.openssl-updater",
+  "version": "0.9.8-1",
+  "vendor": "WebOS Internals <support@webos-internals.org>, Thibaud Gaillard <thibaud.gaillard@gmail.com>",
+
+  "type": "web",
+  "main": "index.html",
+  "icon": "icon.png",
+  "splashicon": "icon_splash.png",
+  "noWindow": true,
+  "uiRevision": 2,
+
+  "message": "OpenSSL-Updater brings the latest version of OpenSSL to your webOS smartphone/tablet, directly patching the system binaries (not to be confused with optware version that gets installed in /opt).<br><br><b>A system reboot is required after installation, as running programs will see their OpenSSL dynamic libraries change (and most certainly crash). This is automagically performed by the end of the installation process.</b><br/><br/>Simply uninstall this application to return your device to its original, unpatched state.",
+
+  "changeLog": [
+    { "version" : "0.9.8-1",
+      "log" : [ "Original OpenSSL release for webOS 1.4.x devices (OpenSSL 0.9.8j 07 Jan 2009), for future investigation work in case of missing/unpublished Palm patch" ] 
+    }, 
+  ]
+}

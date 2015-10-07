@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="600.56903"
+   height="600.81226"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="tux-openssl.svg"
+   inkscape:export-filename="/home/thibaud/SOFT/openssl-updater-webos/icon/tux-openssl_256x256.png"
+   inkscape:export-xdpi="38.348087"
+   inkscape:export-ydpi="38.348087">
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+    <inkscape:perspective
+       id="perspective2884"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2958"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3032"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3106"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3180"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3254"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3475"
+       inkscape:persp3d-origin="256 : 170.66667 : 1"
+       inkscape:vp_z="512 : 256 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 256 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3510"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <linearGradient
+       y2="13.1323"
+       x2="256.00439"
+       y1="498.87701"
+       x1="256.00439"
+       gradientUnits="userSpaceOnUse"
+       id="SVGID_1_-5"
+       gradientTransform="matrix(11.848058,0,0,11.848058,788.62951,6.6973579)">
+      <stop
+         id="stop3429-4"
+         style="stop-color:#E6B043"
+         offset="0" />
+      <stop
+         id="stop3431-2"
+         style="stop-color:#C95328"
+         offset="0.5" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#SVGID_1_-5"
+       id="linearGradient3638"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(11.848058,0,0,11.848058,788.62951,6.6973579)"
+       x1="256.00439"
+       y1="498.87701"
+       x2="256.00439"
+       y2="13.1323" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#SVGID_1_-5"
+       id="linearGradient3665"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(11.848058,0,0,11.848058,788.62951,-16.998757)"
+       x1="256.00439"
+       y1="498.87701"
+       x2="256.00439"
+       y2="13.1323" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#SVGID_1_-5"
+       id="linearGradient3696"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(11.848058,3.3275459e-8,-3.3275459e-8,11.848058,788.62951,54.089589)"
+       x1="256.00439"
+       y1="498.87701"
+       x2="256.00439"
+       y2="13.1323" />
+    <inkscape:perspective
+       id="perspective4380"
+       inkscape:persp3d-origin="256 : 170.66667 : 1"
+       inkscape:vp_z="512 : 256 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 256 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#SVGID_1_-9"
+       id="linearGradient2860"
+       gradientUnits="userSpaceOnUse"
+       x1="256.00439"
+       y1="498.87701"
+       x2="256.00439"
+       y2="13.1323"
+       gradientTransform="translate(779.43097,772.34985)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#SVGID_1_-9"
+       id="linearGradient2927"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(779.43097,772.34985)"
+       x1="256.00439"
+       y1="498.87701"
+       x2="256.00439"
+       y2="13.1323" />
+    <inkscape:perspective
+       id="perspective2965"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2993"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.99050634"
+     inkscape:cx="306.00004"
+     inkscape:cy="297.99999"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     showborder="true"
+     inkscape:showpageshadow="true"
+     inkscape:window-width="1440"
+     inkscape:window-height="824"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3636"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       spacingx="20px"
+       spacingy="20px" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-779.43097,-772.34985)">
+    <rect
+       style="fill:none;stroke:none"
+       id="rect2862"
+       width="600.56903"
+       height="600.01233"
+       x="779.43097"
+       y="772.34985"
+       inkscape:export-filename=""
+       inkscape:export-xdpi="38.360001"
+       inkscape:export-ydpi="38.360001" />
+    <g
+       id="g3080"
+       transform="matrix(1.0479292,0,0,1.0479292,-65.743955,-36.38607)">
+      <image
+         width="532.70923"
+         height="248.849"
+         xlink:href="file:///home/thibaud/SOFT/openssl-updater-webos/icon/openssl-Open.png"
+         id="image3015"
+         x="858.7218"
+         y="759.16211" />
+      <image
+         transform="matrix(0,1,-1,0,0,0)"
+         width="406.93814"
+         height="194.44693"
+         xlink:href="file:///home/thibaud/SOFT/openssl-updater-webos/icon/openssl-SSL.png"
+         id="image3026"
+         x="947.68408"
+         y="-1391.431" />
+    </g>
+    <g
+       id="g3074">
+      <image
+         inkscape:export-ydpi="38.360001"
+         inkscape:export-xdpi="38.360001"
+         inkscape:export-filename="/home/thibaud/Pictures/linphone-webostux-medium.png"
+         xlink:href="file:///home/thibaud/SOFT/openssl-updater-webos/icon/Tux_251x256.png"
+         width="450.99905"
+         height="459.98309"
+         id="image2960"
+         x="802.2821"
+         y="931.17902" />
+      <g
+         transform="matrix(1.2885837,0,0,1.2885837,-657.04959,-395.37537)"
+         id="g3825">
+        <image
+           y="1173.1621"
+           x="1119.431"
+           id="image3037"
+           xlink:href="file:///home/thibaud/SOFT/openssl-updater-webos/icon/Pre_56x94.png"
+           height="94"
+           width="56" />
+        <rect
+           style="fill:#00d0ff;fill-opacity:1;fill-rule:evenodd;stroke:none"
+           id="rect3045"
+           width="42.537792"
+           height="58.805183"
+           x="1126.4423"
+           y="1189.3712" />
+      </g>
+    </g>
+  </g>
+</svg>
