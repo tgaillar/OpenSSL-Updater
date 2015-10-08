@@ -33,6 +33,13 @@ SRC_TZJ = $(patsubst %gz,-z,$(patsubst %bz2,-j,$(SRC_PKG)))
 #
 PATCH += $(wildcard patch/openssl-$(VERSION)-palm.patch)
 
+
+ifneq (,$(EAP_FAST))
+ifeq (0.9.8k,$(VERSION))
+PATCH += patch/openssl-0.9.8k-tlsExtension.patch
+endif
+endif
+
 #
 # BUILD
 #

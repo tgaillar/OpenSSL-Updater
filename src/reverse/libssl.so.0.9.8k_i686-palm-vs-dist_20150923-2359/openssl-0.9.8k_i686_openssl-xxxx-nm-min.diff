@@ -1,0 +1,31 @@
+--- openssl-0.9.8k_i686_openssl-palm-nm.txt	2015-10-06 01:47:15.573577542 +0200
++++ openssl-0.9.8k_i686_openssl-dist-nm.txt	2015-10-06 01:47:26.341577396 +0200
+@@ -174,10 +181,13 @@
+          r cov_2char
+          b c_Pause
+          b c_quiet
+          T crl2pkcs7_main
+          T crl_main
+-         d crl_reasons
+          d crl_usage
++         a crtstuff.c
++         a crtstuff.c
+          U CRYPTO_cleanup_all_ex_data
+          U CRYPTO_free
+          U CRYPTO_malloc
+@@ -884,22 +927,22 @@
+          U RSA_check_key
+-         d rsa_data.16267
+-         r rsa_data_length.16268
+          U RSA_free
+          U RSA_generate_key_ex
+          T rsa_main
+@@ -1074,23 +1125,24 @@
+          U strcasecmp@@GLIBC_2.0
+          U strchr@@GLIBC_2.0
+          U strcmp@@GLIBC_2.0
+          U strcpy@@GLIBC_2.0
+-         U strlen@@GLIBC_2.0
+          U strncat@@GLIBC_2.0
+          U strncmp@@GLIBC_2.0
+          U strrchr@@GLIBC_2.0

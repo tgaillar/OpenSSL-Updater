@@ -1,0 +1,1569 @@
+--- openssl-0.9.8k_i686_libssl-palm-strings.txt	2015-09-22 23:55:22.765409659 +0200
++++ openssl-0.9.8k_i686_libssl-dist-strings.txt	2015-09-23 22:45:22.634405658 +0200
+@@ -200,11 +200,10 @@
+ BUF_MEM_grow_clean
+ ssl3_send_server_key_exchange
+ BN_num_bits
+-ssl_get_sign_pkey
+ BN_bn2bin
+-EVP_dss1
+-RSA_up_ref
++ssl_get_sign_pkey
+ EVP_ecdsa
++RSA_up_ref
+ d2i_DHparams
+ i2d_DHparams
+ ASN1_dup
+@@ -212,6 +211,7 @@
+ EVP_MD_CTX_set_flags
+ RSA_sign
+ EC_KEY_up_ref
++EVP_dss1
+ EC_KEY_generate_key
+ EC_GROUP_get_curve_name
+ BN_dup
+@@ -274,7 +274,6 @@
+ RSAPrivateKey_dup
+ EC_KEY_dup
+ ssl_cert_inst
+-strlen
+ BUF_strdup
+ ssl3_version_str
+ ssl3_enc
+@@ -396,18 +395,17 @@
+ do_dtls1_write
+ EVP_CIPHER_flags
+ dtls1_write_bytes
+-pqueue_size
+ pitem_new
+ pqueue_insert
+ dtls1_get_record
+ pqueue_peek
+ dtls1_read_failed
+-dtls1_get_ccs_header
+ dtls1_get_message_header
++dtls1_get_ccs_header
+ dtls1_clear_record_buffer
+-pqueue_find
+ SSL_get_wbio
+ dtls1_retransmit_message
++pqueue_find
+ stderr
+ fprintf
+ pqueue_iterator
+@@ -603,7 +601,6 @@
+ SSL_SESSION_set_time
+ SSL_CTX_set_timeout
+ SSL_CTX_get_timeout
+-SSL_set_session_secret_cb
+ SSL_CTX_sess_set_new_cb
+ SSL_CTX_sess_get_new_cb
+ SSL_CTX_sess_set_remove_cb
+@@ -621,7 +618,6 @@
+ ENGINE_get_ssl_client_cert_function
+ SSL_get1_session
+ lh_doall_arg
+-SSL_set_hello_extension
+ lh_delete
+ lh_insert
+ SSL_SESSION_new
+@@ -727,46 +723,52 @@
+ libssl.so.0.9.8
+ GLIBC_2.1.3
+ GLIBC_2.0
++UWVS
+ E4=p 
+-D$4t
++\[^_]
+ E4q 
+ E4r 
+ E4s 
+ UWVS
+-|$8A 
+-|$8@ 
+-|$8A 
+-|$8a 
+-|$8` 
+-u49t$8
++|$HA 
++|$H@ 
++|$HA 
++|$Ha 
++|$H` 
++u49t$H
+ E4  
+ E4` 
+-|$8B 
+-D$8-P 
+-[^_]
+-|$8  
+-|$8! 
+-|$80 
+-9|$,
++|$HB 
++D$H-P 
++l[^_]
++|$H  
++|$H! 
++|$H0 
++9|$<
+ E4a 
+ E4A 
+ E4P 
+-|$8  
+-|$8P 
++|$H  
++|$HP 
+ E4p 
+ E4@ 
+ +uD9
+ +uD9
+-L$DtB
+-[^_]
++l[^_]
+ E4! 
+-L$T+H
++L$d+H
+ E41 
+-|$,9
+-D$H1
++|$<9
++D$X1
+ E4Q 
++UWVS
++[^_]
++UWVS
+ G4=P
+-t$(tF=Q
++t$(=
++t:=Q
++\[^_]
++D$T)
+ UWVS
+ |$XA
+ |$X@
+@@ -774,11 +776,11 @@
+ |$XA
+ |$Xq
+ |$Xp
+-UDt+
+ [^_]
+ |$XP
+ |$XS
+ |$X`
++t$T)
+ [^_]
+ |$X 
+ |$X!
+@@ -789,97 +791,115 @@
+ ;D$8
+ +}D9
+ D$0)
++0[^_
++0[^_
+ UWVS
+ D$K0
+ D$$9
++L[^_]
++L[^_]
++UWVS
+ [^_]
+-[^_]
+-F0tI
+-F4t9
+-GD~%
+-\$ 1
++UWVS
++<[^_]
++UWVS
++,[^_]
++,[^_]
++ [^_
++ [^_
++UWVS
++@T9H
+ FT9P tO
+ FT)P 
+-9P u
++FT9P u
+ [^_]
+-UWVS
+-T$()
+ [^_]
+-<[^_
+-T$4ti
+-GL$ 1
+-L$ )
+-T$8)
++UWVS
++<[^_]
++<[^_]
++D$,)D$8
++;FDuJ
++VH)VD1
++UWVS
+ D$ 9
+ ,[^_]
+ DL$ 
+ GL$(
++D$()
+ ,[^_]
+ ,[^_]
+ J09L$
++UWVS
++T$$;Q@
+ q<;q@
+-[^_]
+-[^_]
++\[^_]
++\[^_]
++T$$)VD
+ A<)AD
+-t$ ;D$ 
++T$$9
++\[^_]
++;D$0
+ MT)qD
+ z4p!
+ B4q!
+ z4 !
+ B4!!
+-D$(t
++UWVS
++[^_]
+ u<+F
+ ~4@!
+ F4A!
+-L$4t@
++UWVS
++<[^_]
++<[^_]
+ ;l$$
++T$$;l$$
+ 7;L$4
++UWVS
++<[^_]
+ 9D$ 
+-D$,t
+-L$,1
++UWVS
++L[^_]
++L[^_]
+ UWVS
+ x4`!
+ L[^_]
+ 9D$$
+ F4a!
+ UWVS
+-}4P!
+-E4Q!
++z4P!
++A4Q!
+ [^_]
+-D$,1
+ [^_]
+ tk}1
+ tX}1
+-D$D	
++D$4	
++UWVS
+ }40!
++[^_]
+ E41!
+ UWVS
+-D$dF
+-[^_]
+-L$,9H
+-D$d/
+-D$d/
++D$TF
++\[^_]
++T$H9
++D$T/
++D$T/
+ 9T$H
+-9D$Du
+-D$d2
+-D$d2
+-|$$9xDt;
+-D$d(
++D$T2
++D$T2
++L$$9HDt;
++D$T(
+ |$$ 
+-D$d2
+-D$4~a
+-9T$Du
+-T$49T$0u
+-D$d2
+-DD$<
+-D$dP
+-D$d(
+-D$d/
+-D$d(
+-D$d(
+-D$d(
++D$T2
++L$89L$4u
++D$T2
++DD$@
++D$T(
++D$T/
++D$T(
++D$T(
+ UWVS
+-[^_]
++,[^_]
+ E4P!
+ E4p!
+ E4@!
+@@ -888,62 +908,113 @@
+ E4`!
+ E40!
+ E4P!
+-t8=q
+-tN=r
+-D$8t
++UWVS
++,[^_]
++UWVS
++,[^_]
++,[^_]
++F4=p
++t)=q
++t?=r
++0[^_
++UWVS
++\[^_]
++UWVS
++,[^_]
++,[^_]
++,[^_]
++UWVS
++|[^_]
++|[^_]
++UWVS
++,[^_]
++UWVS
++L[^_]
+ GD$8
+-D$8t
+ ;L$8u
+-L$,tt
+-9|$,
++	t$,
++L$,9
++L[^_]
++L[^_]
+ D$(9D$,
+-9T$,
++t$(9t$,
++T$(9T$,
+ ;|$D
++UWVS
++[^_]
+ D$(@
++L$P9
++[^_]
++D$$9
++D$h9
+ +|$$
++D$$9
+ t$L+|$$
+-t$`+|$$
++L$$9
++D$,+|$$
++UWVS
++L[^_]
++L[^_]
+ 7;L$D
++T$D9l$,
+ 9l$,
+-9l$,
+-D$TF
+-D$ 9HD
+-D$TP
+-t$X1
+-D$T/
+-D$T/
+-;L$X
+-D$T2
+-D$T/
+-D$T/
+-D$T/
+-D$T/
++UWVS
++L[^_]
++L[^_]
++D$DF
++T$48J
++L$89OD
++D$DP
++D$D/
++D$D/
++;|$H
++D$D2
++D$D/
++L$89
++T$$;Bh
++D$D/
++D$D/
++D$D/
+ UWVS
+ ,[^_]
+-T$(~61
+ +T$$
+-[^_]
++,[^_]
++UWVS
++<[^_]
++5t<1
+ UWVS
+ [^_]
+-5t@1
+ UWVS
+ [^_]
+ [^_]
++UWVS
++[^_]
+ |$80t3
+-t$ 1
+-Gvg1
+-\$ 1
++8t&1
++GvT1
++ [^_
++ [^_
++ [^_
++UWVS
++[^_]
+ UWVS
+ [^_]
+ UWVS
+ [^_]
+ UWVS
+ <[^_]
++UWVS
+ |[^_]
+-l$(tj
+ UWVS
++,[^_]
++D$'ut
++,[^_]
++L$()
++9T$(
++UWVS
++[^_]
+ [^_]
+-L$P1
++t$01
+ D$41
+ 9l$8
+ 9l$8
+@@ -951,82 +1022,115 @@
+ |$@;
+ [^_]
+ [^_]
++UWVS
++[^_]
++[^_]
++UWVS
++[^_]
++UWVS
++D$<9
+ L$89
++[^_]
+ |$49
++UWVS
+ D$ 1
+-t$D1
++,[^_]
++,[^_]
++,[^_]
++,[^_]
++ [^_
++ [^_
+ UWVS
+ t$<)
+ [^_]
+ [^_]
+ UWVS
+ 9D$H
+-ND$H9
+-L$$)
+-L$$)
++ND$H
++D$(9
++D$()
++,[^_]
+ ,[^_]
+-[^_]
+ ,[^_]
+ UWVS
+ [^_]
+ ;t$,
+-FL$@9T$L
++D$L9
++FL$@
++L$@9T$L
++L$L9
+ [^_]
+-+t$L
+-D$XtO1
+++|$L
++T$4)
+ ;t$Xu
+ oX;L$4
+-t$T1
+-L$T1
++UWVS
++[^_]
+ UWVS
+ [^_]
+ L$49O4
+ [^_]
+ [^_]
+ [^_]
+-;l$@w
++;l$@
++UWVS
++[^_]
++[^_]
+ UWVS
++<[^_]
++UWVS
++t];wDt
++wH)wD1
+ [^_]
+ [^_]
+-tj;wDt
+ 9B4u
+-9E4t%
++UWVS
++D$49E4t
++[^_]
++UWVS
+ L[^_]
+-T$`;zP
+-T$41
+-W<+r
++|$`;GP
++t$81
++r<+~
+ L[^_]
+-l$`1
+-L$`1
+ UWVS
+ ,[^_]
+-[^_]
++,[^_]
+ UWVS
+-[^_]
++l[^_]
+ u4;t$@t!
+-t$0t
+ D$@- 
+-L$8+T$D
++7+T$D
+ T$df
+-t$4~91
+ +T$H
+-L$8)
+ |$df
+ UWVS
++9~Ps;
+ [^_]
+ UWVS
+ [^_]
+ [^_]
+-;|$8
+-l$0sd
++UWVS
++;|$8sX
++[^_]
+ )|$8
++[^_]
+ T$8)
+ D$8)
+-L$,9
+-T$,s
++UWVS
++[^_]
++L$$9
++T$$9
+ |$0/
++L$0)
++ [^_
++ [^_
++ [^_
++ [^_
++ [^_
++ [^_
+ UWVS
+-T$H;|$H
++;|$H
+ <99|$|
+ \[^_]
+ #ttf
+@@ -1034,50 +1138,61 @@
+ ;|$|tx
+ \[^_]
+ @uHf
+-[^_]
++\[^_]
+ UWVS
++T$|)
++T$09
+ 9D$|
+-L$@)
+-L$@)
++|$(9
++L$<)
++L$<)
+ \[^_]
+-L$8;L$4
+-t$89t$|
+-L$,r
++L$4;L$0
++t$49t$|r
+ \[^_]
+-t$8t.
+-,7;l$X
++,7;l$XuZ
++L$(9
+ ;D$X
+-;D$X
+-t$@s
+-L$X)
+-L$X)
+-l$8)
+-T$8)T$X
+-+t$ ;t$$
+-9D$(|
++UWVS
++;D$Hs#
++L$H)
++,[^_]
++t$()
++,[^_]
++T$()T$H
++D$H)
++UWVS
+ ;|$(
+ [^_]
+  ^_]
+-D$'mast
+-D$+er s
+-D$/ecre
+-D$3t
++D$3mast
++D$7er s
++D$;ecre
++D$?t
+ UWVS
+ [^_]
++UWVS
+ t$x+t$
+-l$Ht{
+-D$+tf
+-D$P)
++|[^_]
++UWVS
++<[^_]
++D$+tb
++|$,)
+ ET$4
++<[^_]
+ 9t$0
+ +L$0;L$
+ 9D$8t
+ 9|$8u
+ +t$0
++UWVS
++[^_]
++[^_]
+ D$,key 
+ D$0expa
+ D$4nsio
+ D$8n
++[^_]
+ UWVS
+ ;D$`
+ t$h;
+@@ -1094,111 +1209,170 @@
+ L[^_]
+ 9D$$
+ F4a!
+-[^_]
++L[^_]
+ ~4p!
+ F4q!
+ ~4 !
+ F4!!
+ UWVS
+ z4P!
+-E4Q!
++B4Q!
+ [^_]
+ [^_]
++UWVS
+ }40!
++,[^_]
+ +T$(
+ E41!
+ +t$$
+ UWVS
+ G4p!
+-[^_]
++<[^_]
+ G4P!
+ G4`!
+ G4 !
+ G4p!
+ +D$(
+ +t$$
+-t8=q
+-tN=r
++F4=p
++t)=q
++t?=r
++0[^_
++UWVS
++\[^_]
++UWVS
++\[^_]
++\[^_]
+ N|$(
+ UWVS
+-[^_]
+-T$(t=1
++,[^_]
+ +L$$
+-+l$ 
+++t$ 
+ UWVS
+-[^_]
+-T$(8A
++<[^_]
+ UWVS
+ [^_]
+-$rKvE
+-t:)4$
+-t$P1
++rAv;
++t0)4$
++UWVS
++,[^_]
++,[^_]
++,[^_]
++,[^_]
++L$.f
+ 0[^_
+-T$8)
++0[^_
++UWVS
++t$<)
+ ;D$<
++[^_]
++[^_]
+ UWVS
++t$<)
++[^_]
++[^_]
+ [^_]
+-T$(1
++UWVS
++[^_]
++UWVS
++,[^_]
++,[^_]
++UWVS
++l[^_]
+ 9T$(
+ +T$(
++D$(9
+ UWVS
+ r|f;rH
++\[^_]
++\[^_]
++|$T9
++L$D1
++D$@1
++T$D)
++L$@)
++L$8#
++UWVS
++;t$d
++L[^_]
++D$$f
++L[^_]
++;|$lu
++9D$l
++UWVS
+ [^_]
+-D$@9
+-L$@1
+-T$8)
+-D$(vD
+-L$@1
+-L$8#Q
+ UWVS
+-;t$T
+-<[^_]
+-;|$\u
+-T$Pf
+-D$$1
+-L$Pf
+-t$\9T$\
+-|$$1
++[^_]
++[^_]
++UWVS
++[^_]
+ UWVS
+ [^_]
+ 9D$0
+ [^_]
+ [^_]
++UWVS
+ Bxf;F
+-f;Jxt6
+-Axf9
+-D$0t
+-~u9D$8
++[^_]
++Pxf9
++w[f9
++[^_]
++~y9D$8
+ UWVS
+ T$L9
+-[^_]
+-9xDs_
+-9xDr
++,[^_]
++L$@9yDs:
++L$@9yDr
+ ,[^_]
+ UWVS
+ uH)uD
+ ,[^_]
+-l$8~G
+-9F4t
+-9G4t%
+-D$+tT
+-|$0)
++UWVS
++[^_]
++UWVS
++,[^_]
++D$$9F4t
++UWVS
++D$49G4t
++[^_]
++UWVS
++<[^_]
++D$+tR
++t$0)
++<[^_]
+ 9t$4
+ +L$4;L$
+-9|$8t
+-9D$8
++9D$8t
++9|$8
+ +t$4
+ t	;B
+-\$ 1
++ [^_
++ [^_
++ [^_
++UWVS
++l$$1
++|$(1
+ +D$(
+ [^_]
+ ;D$$~
+-x<9l$4u6
++t$$1
++UWVS
++l$4!
++x>9l$4f
++[^_]
++UWVS
++[^_]
++[^_]
++[^_]
++[^_]
+ UWVS
+-t$,!l$
++T$@!l$
+ \[^_]
++t$D%
+ L$X@
+ L$X@@
++ [^_
++ [^_
+ UWVS
+ [^_]
+ [^_]
+@@ -1207,80 +1381,171 @@
+ 9D$8
+ [^_]
+ [^_]
+-9l$8|H
+-)l$8
+-L$49L$
+-\$ 1
++UWVS
++[^_]
++9t$8|:
++)t$8
++;l$4
++UWVS
++[^_]
++UWVS
++[^_]
++ [^_
++ [^_
+ ;D$4
+-\$ 1
++ [^_
++ [^_
+ ;D$4
+ UWVS
+ [^_]
+ [^_]
+ UWVS
++,[^_]
++,[^_]
++UWVS
+ [^_]
+ t,;U
+ UWVS
++,[^_]
++UWVS
+ [^_]
+ UWVS
++,[^_]
++UWVS
++[^_]
++[^_]
++UWVS
++[^_]
+ [^_]
+ UWVS
+-L$@1
+ [^_]
+-UWV1
+ [^_]
+ [^_]
++ [^_
++ [^_
++ [^_
+ UWVS
+ [^_]
+ [^_]
+-L$4f
+ UWVS
+ [^_]
+-UWV1
++UWVS
++[^_]
++UWVS
+ [^_]
+ [^_]
+-wJs	
+-|$D9y
+-|$<#y
+-T$4#Q
+-T$8!
+-;t$ f
+-$^_]
+ UWVS
+-E|$0
+-|$0u
+-E|$<
+-|$Dt'=
++,[^_]
++,[^_]
++wGs	
++D$8%
++|$H9y
++T$8#Q
++|$@#y
++T$<!
++;t$$
++;t$ 
++(^_]
++UWVS
++[^_]
++[^_]
+ [^_]
+ [^_]
+-6< t"<;
++UWVS
++98t	
++[^_]
++UWVS
++|$D=
++L[^_]
++|$D=
++L[^_]
++UWVS
+ \[^_]
+-D$4	L$4
+-!T$0!
+-	D$0
+-D$<	L$<
+-!|$8!
+-	D$8
++!T$0
++	D$0	L$4
++!|$8
++	D$8	L$<
++t$ 8
+ 9|$T
+ M|$T
+ UWVS
+-T$$	
+-D$D#
++D$0	
++;t$,u
++|$T#>
++l[^_]
++UWVS
++t]w8=
+ [^_]
+-tnwD=
+ T$81
+-\$ 1
+-\$ 1
+-\$ 1
+-\$ 1
++[^_]
++UWVS
++[^_]
++[^_]
++ [^_
++ [^_
++ [^_
++UWVS
++[^_]
++[^_]
++ [^_
++ [^_
++ [^_
++UWVS
++[^_]
++[^_]
++[^_]
++ [^_
++ [^_
++ [^_
++0[^_
++0[^_
++UWVS
++[^_]
++[^_]
++ [^_
++ [^_
++ [^_
++0[^_
++0[^_
++UWVS
++[^_]
++[^_]
++UWVS
++[^_]
++[^_]
++[^_]
++0[^_
++0[^_
++UWVS
++[^_]
++[^_]
++UWVS
++[^_]
++[^_]
++[^_]
++0[^_
++0[^_
++UWVS
++[^_]
++[^_]
++ [^_
++ [^_
++ [^_
++ [^_
++UWVS
++[^_]
++[^_]
++UWVS
++[^_]
++[^_]
+ UWVS
+ D$$:
+-l$X1
+ +L$<)L$4
+ +D$<)D$4
+ +T$<)T$4
+ D$D(
+-[^_]
++D$<)
++|[^_]
+ D$D%
+ D$D-
+ +T$<)T$4
+@@ -1294,55 +1559,84 @@
+ D$$;
+ D$$;
+ D$$;
++l$<)
+ D$$;
+ D$$;
+ D$$;
+ D$$;
+-+D$<)D$4
+-+L$<)L$4
+-+L$<)L$4
+-+L$<)L$4
+ +L$<)L$4
+ +T$<)T$4
+-+L$<)L$4
+++D$<)D$4
+++D$<)D$4
+++D$<)D$4
+++T$<)T$4
+++D$<)D$4
+ +T$<)T$4
+ D$D~
+-D$4+T$<)
+-L$4+T$<)
+-D$4+T$<)
+-t$4+T$<
+++T$<
++L$4)
+++T$<
++D$4)
+++D$<
++L$4)
+++T$<
++t$4)
+ D$$?
+-t$4+D$<
+++L$<
++t$4)
+ D$$?
+-L$4+D$<)
+-D$4+T$<)
+-t$4+D$<
+++L$<
++D$4)
+++T$<
++L$4)
+++L$<
++t$4)
+ D$$?
+-L$4+D$<)
+-L$4+D$<)
+-t$4+T$<
+++L$<
++D$4)
+++L$<
++D$4)
+++T$<
++t$4)
+ D$$?
+-t$4+T$<
+++D$<
++t$4)
+ D$$?
+-t$4+T$<
+++T$<
++t$4)
+ D$$?
+-D$4+T$<)
+-t$4+T$<
+++T$<
++L$4)
+++T$<
++t$4)
+ D$$?
+-t$4+D$<
+++L$<
++t$4)
+ D$$?
+ UWVS
+ [^_]
+ [^_]
+ UWVS
+-9wDvT
++9wDvO
+ ,[^_]
+ 9whv7
+-\$ 1
++ [^_
++ [^_
++UWVS
++[^_]
++t$ 1
++UWVS
++[^_]
++[^_]
++UWVS
+ |$4mt
+-W ;P
++[^_]
+ |$8;
+ OL$8
++UWVS
++[^_]
++UWVS
++[^_]
+ s2_srvr.c
+ s2_clnt.c
+ error >= 0 && error <= (int)sizeof(buf)
+@@ -1455,10 +1749,8 @@
+ ssl2-md5
+ ssl3-md5
+ ssl3-sha1
+-/var/ssl/trustedcerts
+ OpenSSL 0.9.8k 25 Mar 2009
+ AES:ALL:!aNULL:!eNULL:+RC4:@STRENGTH
+-ALL:!LOW:!EXP:!ADH:!IDEA:@STRENGTH
+ s->sid_ctx_length <= sizeof s->sid_ctx
+ ssl_cert.c
+ %s/%s
+@@ -1949,7 +2241,6 @@
+ SSL_write
+ TLS1_CHANGE_CIPHER_STATE
+ TLS1_SETUP_KEY_BLOCK
+-SSL_set_hello_extension
+ app data in handshake
+ bad alert record
+ bad authentication type
+@@ -2202,7 +2493,65 @@
+ x509 verification setup problems
+ 666666666666666666666666666666666666666666666666
+ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-libssl.so.0.9.8
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++GCC: (GNU) 4.2.1
++/home/slug/optware/i686g25/toolchain/build/targets/i686-unknown-linux-gnu/build/build-libc/csu/crti.S
++/home/slug/optware/i686g25/toolchain/build/targets/src/glibc-2.5/csu
++GNU AS 2.19.1
++/home/slug/optware/i686g25/toolchain/build/targets/i686-unknown-linux-gnu/build/build-libc/csu/crtn.S
++/home/slug/optware/i686g25/toolchain/build/targets/src/glibc-2.5/csu
++GNU AS 2.19.1
++/home/slug/optware/i686g25/toolchain/build/targets/i686-unknown-linux-gnu/build/build-libc/csu
++crti.S
++!/!=Z!gu/
++!/!=Z!
++/home/slug/optware/i686g25/toolchain/build/targets/i686-unknown-linux-gnu/build/build-libc/csu
++crtn.S
+ .symtab
+ .strtab
+ .shstrtab
+@@ -2227,7 +2576,14 @@
+ .got.plt
+ .data
+ .bss
+-.gnu_debuglink
++.comment
++.debug_aranges
++.debug_info
++.debug_abbrev
++.debug_line
++.debug_ranges
++initfini.c
++crtstuff.c
+ __CTOR_LIST__
+ __DTOR_LIST__
+ __JCR_LIST__
+@@ -2240,27 +2596,37 @@
+ __FRAME_END__
+ __JCR_END__
+ __do_global_ctors_aux
+-SSLv2_method_data.13758
++s2_meth.c
++SSLv2_method_data.13732
+ ssl2_get_method
+-SSLv2_server_method_data.13841
++s2_srvr.c
++SSLv2_server_method_data.13815
+ ssl2_get_server_method
+ request_certificate
+-SSLv2_client_method_data.13841
++s2_clnt.c
++SSLv2_client_method_data.13815
+ ssl2_get_client_method
+ client_certificate
+-sslv2_base_method_data.13783
++s2_lib.c
++sslv2_base_method_data.13757
++s2_enc.c
++s2_pkt.c
+ write_pending
+ read_n
+ ssl2_read_internal
+-SSLv3_method_data.13758
++s3_meth.c
++SSLv3_method_data.13732
+ ssl3_get_method
+-SSLv3_server_method_data.13849
++s3_srvr.c
++SSLv3_server_method_data.13823
+ ssl3_get_server_method
+-SSLv3_client_method_data.14945
++s3_clnt.c
++SSLv3_client_method_data.14919
+ ssl3_get_client_method
+ ca_dn_cmp
+-nid_list.15942
+-sslv3_base_method_data.13784
++nid_list.15907
++s3_lib.c
++sslv3_base_method_data.13758
+ ssl3_read_internal
+ .L196
+ .L145
+@@ -2296,15 +2662,12 @@
+ .L245
+ .L246
+ .L247
+-salt.14097
++s3_enc.c
+ ssl3_pad_1
+ ssl3_pad_2
+ ssl3_handshake_mac
+-.L10
+-.L11
+-.L12
+-.L13
+ .L14
++.L13
+ .L15
+ .L16
+ .L17
+@@ -2312,45 +2675,68 @@
+ .L19
+ .L20
+ .L21
++.L22
++.L23
++.L24
++.L25
++s3_pkt.c
+ do_ssl3_write
+-SSLv23_method_data.13760
++s3_both.c
++.L10
++s23_meth.c
++SSLv23_method_data.13734
+ ssl23_get_method
+-SSLv23_server_method_data.13825
++s23_srvr.c
++SSLv23_server_method_data.13799
+ ssl23_get_server_method
+-SSLv23_client_method_data.13827
++s23_clnt.c
++SSLv23_client_method_data.13801
+ ssl23_get_client_method
+-sslv23_base_method_data.13755
+-TLSv1_method_data.13758
++s23_lib.c
++sslv23_base_method_data.13729
++s23_pkt.c
++t1_meth.c
++TLSv1_method_data.13732
+ tls1_get_method
+-TLSv1_server_method_data.13821
++t1_srvr.c
++TLSv1_server_method_data.13795
+ tls1_get_server_method
+-TLSv1_client_method_data.13821
++t1_clnt.c
++TLSv1_client_method_data.13795
+ tls1_get_client_method
+-tlsv1_base_method_data.15333
++t1_lib.c
++tlsv1_base_method_data.15307
++t1_enc.c
+ tls1_P_hash
+ tls1_PRF
+-empty.13852
+-.L22
+-.L23
+-.L24
+-.L25
+-DTLSv1_method_data.13758
++empty.13826
++.L11
++.L12
++d1_meth.c
++DTLSv1_method_data.13732
+ dtls1_get_method
+-DTLSv1_server_method_data.13849
++d1_srvr.c
++DTLSv1_server_method_data.13823
+ dtls1_get_server_method
+-DTLSv1_client_method_data.13849
++d1_clnt.c
++DTLSv1_client_method_data.13823
+ dtls1_get_client_method
+-dtlsv1_base_method_data.13757
++d1_lib.c
++dtlsv1_base_method_data.13731
++d1_pkt.c
+ bytes_to_long_long
+ dtls1_record_bitmap_update
+ dtls1_retrieve_buffered_record
+ dtls1_buffer_record
+ dtls1_process_record
++d1_both.c
+ dtls1_set_message_header_int
+ dtls1_hm_fragment_free
+ dtls1_hm_fragment_new
+ dtls1_preprocess_fragment
+ dtls1_get_message_fragment
++d1_enc.c
++ssl_lib.c
+ SSL_SESSION_hash_LHASH_HASH
+ SSL_SESSION_cmp_LHASH_COMP
+ .L50
+@@ -2386,24 +2772,29 @@
+ .L216
+ .L217
+ .L218
++ssl_err2.c
++ssl_cert.c
+ xname_cmp
+ add_client_CA
+ set_client_CA_list
+-ssl_x509_store_ctx_idx.14743
++ssl_x509_store_ctx_idx.14717
++ssl_sess.c
+ SSL_SESSION_list_remove
+ timeout_LHASH_DOALL_ARG
+ remove_session_lock
+ def_generate_session_id
++ssl_ciph.c
+ sk_comp_cmp
+ ll_append_tail
+ ssl_cipher_apply_rule
+ load_builtin_compressions
+ ssl_comp_methods
+-format.14251
++format.14225
+ ssl_cipher_process_rulestr
+ ssl_cipher_methods
+ ssl_digest_methods
+ cipher_aliases
++ssl_stat.c
+ .L320
+ .L319
+ .L321
+@@ -2454,8 +2845,13 @@
+ .L371
+ .L372
+ .L373
++ssl_rsa.c
+ ssl_set_cert
+ ssl_set_pkey
++ssl_asn1.c
++ssl_txt.c
++ssl_algs.c
++bio_ssl.c
+ methods_sslp
+ ssl_callback_ctrl
+ ssl_free
+@@ -2490,8 +2886,10 @@
+ .L170
+ .L171
+ .L172
++ssl_err.c
+ SSL_str_functs
+ SSL_str_reasons
++kssl.c
+ _GLOBAL_OFFSET_TABLE_
+ __dso_handle
+ __i686.get_pc_thunk.cx
+@@ -2846,7 +3244,6 @@
+ ECDSA_verify
+ ssl_cert_dup
+ SSL_CTX_set_client_cert_cb
+-strlen@@GLIBC_2.0
+ SSL_CTX_set_cookie_generate_cb
+ EC_KEY_up_ref
+ EVP_CipherInit_ex
+@@ -3014,7 +3411,6 @@
+ EC_POINT_oct2point
+ SSL_SESSION_print
+ SSL_set_quiet_shutdown
+-SSL_set_session_secret_cb
+ ssl2_get_cipher_by_char
+ pqueue_free
+ RAND_pseudo_bytes
+@@ -3027,7 +3423,6 @@
+ SSL_get_SSL_CTX
+ SSL_CTX_get_cert_store
+ dtls1_read_failed
+-SSL_set_hello_extension
+ ssl_sess_cert_free
+ ssl_get_server_send_cert
+ CRYPTO_add_lock
+@@ -3067,7 +3462,6 @@
+ lh_insert
+ X509_free
+ dtls1_version_str
+-pqueue_size
+ dtls1_send_client_verify
+ EC_KEY_generate_key
+ ssl23_put_cipher_by_char

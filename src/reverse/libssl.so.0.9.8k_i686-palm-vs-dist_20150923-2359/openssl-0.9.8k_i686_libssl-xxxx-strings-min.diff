@@ -1,0 +1,93 @@
+--- openssl-0.9.8k_i686-orig_libssl.txt	2015-09-22 23:55:22.765409659 +0200
++++ openssl-0.9.8k_i686_libssl.txt	2015-09-23 22:45:22.634405658 +0200
+@@ -274,7 +274,6 @@
+ RSAPrivateKey_dup
+ EC_KEY_dup
+ ssl_cert_inst
+-strlen
+ BUF_strdup
+ ssl3_version_str
+ ssl3_enc
+@@ -396,18 +395,17 @@
+ do_dtls1_write
+ EVP_CIPHER_flags
+ dtls1_write_bytes
+-pqueue_size
+ pitem_new
+ pqueue_insert
+@@ -603,7 +601,6 @@
+ SSL_SESSION_set_time
+ SSL_CTX_set_timeout
+ SSL_CTX_get_timeout
+-SSL_set_session_secret_cb
+ SSL_CTX_sess_set_new_cb
+ SSL_CTX_sess_get_new_cb
+ SSL_CTX_sess_set_remove_cb
+@@ -621,7 +618,6 @@
+ ENGINE_get_ssl_client_cert_function
+ SSL_get1_session
+ lh_doall_arg
+-SSL_set_hello_extension
+ lh_delete
+ lh_insert
+ SSL_SESSION_new
+@@ -1455,10 +1749,8 @@
+ ssl2-md5
+ ssl3-md5
+ ssl3-sha1
+-/var/ssl/trustedcerts
+ OpenSSL 0.9.8k 25 Mar 2009
+ AES:ALL:!aNULL:!eNULL:+RC4:@STRENGTH
+-ALL:!LOW:!EXP:!ADH:!IDEA:@STRENGTH
+ s->sid_ctx_length <= sizeof s->sid_ctx
+ ssl_cert.c
+ %s/%s
+@@ -1949,7 +2241,6 @@
+ SSL_write
+ TLS1_CHANGE_CIPHER_STATE
+ TLS1_SETUP_KEY_BLOCK
+-SSL_set_hello_extension
+ app data in handshake
+ bad alert record
+ bad authentication type
+@@ -2296,15 +2662,12 @@
+ .L245
+ .L246
+ .L247
+-salt.14097
++s3_enc.c
+ ssl3_pad_1
+ ssl3_pad_2
+ ssl3_handshake_mac
+@@ -2846,7 +3244,6 @@
+ ECDSA_verify
+ ssl_cert_dup
+ SSL_CTX_set_client_cert_cb
+-strlen@@GLIBC_2.0
+ SSL_CTX_set_cookie_generate_cb
+ EC_KEY_up_ref
+ EVP_CipherInit_ex
+@@ -3014,7 +3411,6 @@
+ EC_POINT_oct2point
+ SSL_SESSION_print
+ SSL_set_quiet_shutdown
+-SSL_set_session_secret_cb
+ ssl2_get_cipher_by_char
+ pqueue_free
+ RAND_pseudo_bytes
+@@ -3027,7 +3423,6 @@
+ SSL_get_SSL_CTX
+ SSL_CTX_get_cert_store
+ dtls1_read_failed
+-SSL_set_hello_extension
+ ssl_sess_cert_free
+ ssl_get_server_send_cert
+ CRYPTO_add_lock
+@@ -3067,7 +3462,6 @@
+ lh_insert
+ X509_free
+ dtls1_version_str
+-pqueue_size
+ dtls1_send_client_verify
+ EC_KEY_generate_key
+ ssl23_put_cipher_by_char

@@ -1,0 +1,43 @@
+--- openssl-0.9.8k_i686_libcrypto-palm-nm.txt	2015-10-06 01:18:42.657600819 +0200
++++ openssl-0.9.8k_i686_libcrypto-dist-nm.txt	2015-10-06 01:17:46.121601587 +0200
+@@ -1726,9 +1931,13 @@
+          d EC_str_functs
+          d EC_str_reasons
+-         d _EC_WAPI_1
+          T ec_wNAF_have_precompute_mult
+          T ec_wNAF_mul
+          T ec_wNAF_precompute_mult
+@@ -3277,30 +3552,35 @@
+          d malloc_locked_func
+          r map.12674
+          d mapping.4853
+-         r max.6461
+-         r max.6461
+          b md
+          T MD2
+          t md2_block
+@@ -3376,11 +3663,17 @@
+          t mime_param_free
+          t mime_parse_hdr
+          t mime_parse_hdr
+-         r min.6460
+-         r min.6460
+          T ms_time_cmp
+          T ms_time_diff
+          T ms_time_free
+@@ -4177,7 +4543,6 @@
+          T pqueue_peek
+          T pqueue_pop
+          T pqueue_print
+-         T pqueue_size
+          r primes
+          t print
+          t print_bio
+@@ -4644,7 +5066,9 @@
+          t strip_ends
+          t strip_eol
+          t strip_spaces
+-         U strlen@@GLIBC_2.0
+          U strncasecmp@@GLIBC_2.0
+          U strncmp@@GLIBC_2.0
+          U strncpy@@GLIBC_2.0

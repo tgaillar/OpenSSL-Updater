@@ -1,0 +1,180 @@
+--- openssl-0.9.8k_i686_libcrypto-palm-strings.txt	2015-10-06 00:59:34.481616421 +0200
++++ openssl-0.9.8k_i686_libcrypto-dist-strings.txt	2015-10-06 00:59:47.453616245 +0200
+@@ -76,7 +76,6 @@
+ CRYPTO_dbg_set_options
+ CRYPTO_dbg_get_options
+ CRYPTO_strdup
+-strlen
+ strcpy
+ CRYPTO_malloc_debug_init
+ CRYPTO_dbg_free
+@@ -3347,7 +3346,6 @@
+ pqueue_find
+ pqueue_iterator
+ pqueue_next
+-pqueue_size
+ pqueue_print
+ pqueue_free
+ pitem_free
+@@ -6187,12 +7778,14 @@
+  thread=%lu, file=%s, line=%d, info="
+ %ld bytes leaked in %d chunks
+ OpenSSL 0.9.8k 25 Mar 2009
+-built on: date not available
++Wed Sep 23 22:21:20 CEST 2015
++built on: %s
+ compiler: %s
+ linux-elf
+ platform: %s
+ OPENSSLDIR: "/usr/lib/ssl"
+-i686-nptl-linux-gnu-gcc -fPIC -DOPENSSL_PIC -DOPENSSL_THREADS -D_REENTRANT -DDSO_DLFCN -DHAVE_DLFCN_H -DL_ENDIAN 	-DTERMIO -fexpensive-optimizations -fomit-frame-pointer -frename-registers -O2 -fno-strict-aliasing -fno-inline-functions -Wall -DOPENSSL_BN_ASM_PART_WORDS -DOPENSSL_IA32_SSE2 -DSHA1_ASM -DMD5_ASM -DRMD160_ASM -DAES_ASM
++not available
++gcc -fPIC -DOPENSSL_PIC -DOPENSSL_THREADS -D_REENTRANT -DDSO_DLFCN -DHAVE_DLFCN_H -fPIC -DOPENSSL_PIC -DOPENSSL_THREADS -D_REENTRANT -DDSO_DLFCN -DHAVE_DLFCN_H -DL_ENDIAN -DTERMIO -fexpensive-optimizations -fomit-frame-pointer -frename-registers -fno-strict-aliasing -fno-inline-functions -Wall -DOPENSSL_BN_ASM_PART_WORDS -DOPENSSL_IA32_SSE2 -DSHA1_ASM -DMD5_ASM -DRMD160_ASM -DAES_ASM -DL_ENDIAN -DTERMIO -O3 -fomit-frame-pointer -Wall -DOPENSSL_BN_ASM_PART_WORDS -DOPENSSL_IA32_SSE2 -DSHA1_ASM -DMD5_ASM -DRMD160_ASM -DAES_ASM
+ ex_data.c
+ tmdiff.c
+ z>CRYPTO_get_ex_new_index
+@@ -7215,8 +8808,6 @@
+ X509v3 Freshest CRL
+ id-on-permanentIdentifier
+ Permanent Identifier
+-ECDSA-192
+-ECDSA-curve
+ Netscape Certificate Extension
+ X509v3 Private Key Usage Period
+ X509v3 Subject Alternative Name
+@@ -7807,7 +9398,6 @@
+ FFFFFFFFFFFFFFFFFFFFFFFFFDE7
+ 07338f
+ 1ee9
+-WAPI curve guess
+ SECG/WTLS curve over a 112 bit prime field
+ SECG curve over a 112 bit prime field
+ FFFFFFFDFFFFFFFFFFFFFFFFFFFFFFFF
+@@ -8128,12 +9718,6 @@
+ 	IPSec/IKE/Oakley curve #4 over a 185 bit binary field.
+ 	Not suitable for ECDSA.
+ 	Questionable extension field!
+-BDB6F4FE3E8B1D9E0DA8C0D46F4C318CEFE4AFE3B6B8551F
+-BB8E5E8FBC115E139FE6A814FE48AAA6F0ADA1AA5DF91985
+-1854BEBDC31B21B7AEFC80AB0ECD10D5B1B3308E6DBF11C1
+-4AD5F7048DE709AD51236DE65E4D4B482C836DC6E4106640
+-02BB3A02D4AAADACAE24817A4CA3A1B014B5270432DB27D2
+-BDB6F4FE3E8B1D9E0DA8C0D40FC962195DFAE76F56564677
+ MinghuaQu)
+ MinghuaQuS
+ MinghuaQu
+@@ -9016,7 +10600,6 @@
+ spkac
+ sig_algor
+ NETSCAPE_CERT_SEQUENCE
+-certs
+ d2i_pu.c
+ d2i_pr.c
+ i2d_pu.c
+@@ -9578,7 +11161,7 @@
+ pem_pkey.c
+ /usr/lib/ssl/private
+ /usr/lib/ssl
+-/var/ssl/trustedcas
++/usr/lib/ssl/certs
+ /usr/lib/ssl/cert.pem
+ SSL_CERT_DIR
+ SSL_CERT_FILE
+@@ -10646,6 +12230,64 @@
+ INF 
+ DEBUG 
+ DBG 
++OPENSSL_ia32_cpuid
++OPENSSL_rdtsc
++OPENSSL_instrument_halt
++OPENSSL_far_spin
++OPENSSL_wipe_cpu
++OPENSSL_atomic_add
++OPENSSL_indirect_call
++md5_block_asm_data_order
++sha1_block_data_order
++sha512_block_sse2
++ripemd160_block_asm_data_order
++DES_encrypt1
++DES_encrypt2
++DES_encrypt3
++DES_decrypt3
++DES_ncbc_encrypt
++DES_ede3_cbc_encrypt
++fcrypt_body
++_x86_AES_encrypt
++AES_encrypt
++_x86_AES_decrypt
++AES_decrypt
++AES_cbc_encrypt
++AES_set_encrypt_key
++AES_set_decrypt_key
++BF_encrypt
++BF_decrypt
++BF_cbc_encrypt
++bn_mul_add_words
++bn_mul_words
++bn_sqr_words
++bn_div_words
++bn_add_words
++bn_sub_words
++bn_sub_part_words
++bn_mul_comba8
++bn_mul_comba4
++bn_sqr_comba8
++bn_sqr_comba4
++__udivdi3
++__umoddi3
++high
++__cbtmp
++__udivmoddi4
++complex float
++USItype
++long long unsigned int
++unsigned char
++short unsigned int
++DWunion
++complex long double
++UDItype
++long long int
++__udivdi3
++short int
++complex double
++DWstruct
++__umoddi3
+ .symtab
+ .strtab
+ .shstrtab
+@@ -11056,7 +13369,6 @@
+ _EC_WTLS_12
+ _EC_IPSEC_155_ID3
+ _EC_IPSEC_185_ID4
+-_EC_WAPI_1
+ _EC_SECG_PRIME_112R1_SEED
+ _EC_SECG_PRIME_112R2_SEED
+ _EC_SECG_PRIME_128R1_SEED
+@@ -11697,8 +14184,6 @@
+ ok_read
+ ok_write
+ ok_ctrl
+-min.6460
+-max.6461
+ in_utf8
+ cpy_asc
+ cpy_bmp
+@@ -13840,7 +16528,6 @@
+ ASN1_UNIVERSALSTRING_to_string
+ BN_value_one
+ ENGINE_set_default_RSA
+-strlen@@GLIBC_2.0
+ PKCS12_get_attr_gen
+ X509_REVOKED_it
+ STORE_ATTR_INFO_free
+@@ -14837,7 +17524,6 @@
+ DES_set_key_unchecked
+ X509_free
+ EVP_EncryptFinal_ex
+-pqueue_size
+ KRB5_AUTHENTBODY_it
+ CRYPTO_thread_id
+ X509_set_version

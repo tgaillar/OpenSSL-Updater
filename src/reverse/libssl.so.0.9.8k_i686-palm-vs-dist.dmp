@@ -1,0 +1,475 @@
+libssl.so.0.9.8k_i686-dist								|libssl.so.0.9.8k_i686-palm
+==========================								|==========================
+											|
+SSL_CTX *SSL_CTX_new(SSL_METHOD *meth)							|
+	{										|
+   2d3fb:	55                   	push   %ebp					|
+   2d3fc:	57                   	push   %edi					|
+   2d3fd:	56                   	push   %esi					|
+   2d3fe:	53                   	push   %ebx					|
+   2d3ff:	83 ec 1c             	sub    $0x1c,%esp				|
+   2d402:	e8 ec e8 fd ff       	call   bcf3 <__i686.get_pc_thunk.bx>		|
+   2d407:	81 c3 ed 2b 01 00    	add    $0x12bed,%ebx				|
+   2d40d:	8b 7c 24 30          	mov    0x30(%esp),%edi				|
+	SSL_CTX *ret=NULL;								|
+											|
+	if (meth == NULL)								|
+   2d411:	85 ff                	test   %edi,%edi				|
+   2d413:	0f 84 be 03 00 00    	je     2d7d7 <SSL_CTX_new+0x3dc>		|
+		SSLerr(SSL_F_SSL_CTX_NEW, SSL_R_ONLY_TLS_ALLOWED_IN_FIPS_MODE);		|
+		return NULL;								|
+		}									|
+#endif											|
+											|
+	if (SSL_get_ex_data_X509_STORE_CTX_idx() < 0)					|
+   2d419:	e8 ca 2c 00 00       	call   300e8 <SSL_get_ex_data_X509_STORE_CTX_idx>
+   2d41e:	85 c0                	test   %eax,%eax				|
+   2d420:	0f 88 e3 02 00 00    	js     2d709 <SSL_CTX_new+0x30e>		|
+		{									|
+		SSLerr(SSL_F_SSL_CTX_NEW,SSL_R_X509_VERIFICATION_SETUP_PROBLEMS);	|
+		goto err;								|
+		}									|
+	ret=(SSL_CTX *)OPENSSL_malloc(sizeof(SSL_CTX));					|
+   2d426:	c7 44 24 08 86 05 00 	movl   $0x586,0x8(%esp)				|
+   2d42d:	00 									|
+   2d42e:	8d ab 84 9b ff ff    	lea    -0x647c(%ebx),%ebp			|
+   2d434:	89 6c 24 04          	mov    %ebp,0x4(%esp)				|
+   2d438:	c7 04 24 40 01 00 00 	movl   $0x140,(%esp)				|
+   2d43f:	e8 2c da fd ff       	call   ae70 <CRYPTO_malloc@plt>			|
+   2d444:	89 c6                	mov    %eax,%esi				|
+	if (ret == NULL)								|
+   2d446:	85 c0                	test   %eax,%eax				|
+   2d448:	0f 84 eb 02 00 00    	je     2d739 <SSL_CTX_new+0x33e>		|
+		goto err;								|
+											|
+	memset(ret,0,sizeof(SSL_CTX));							|
+   2d44e:	c7 44 24 08 40 01 00 	movl   $0x140,0x8(%esp)				|
+   2d455:	00 									|
+   2d456:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)				|
+   2d45d:	00 									|
+   2d45e:	89 04 24             	mov    %eax,(%esp)				|
+   2d461:	e8 ca d9 fd ff       	call   ae30 <memset@plt>			|
+											|
+	ret->method=meth;								|
+   2d466:	89 3e                	mov    %edi,(%esi)				|
+											|
+	ret->cert_store=NULL;								|
+   2d468:	c7 46 0c 00 00 00 00 	movl   $0x0,0xc(%esi)				|
+	ret->session_cache_mode=SSL_SESS_CACHE_SERVER;					|
+   2d46f:	c7 46 20 02 00 00 00 	movl   $0x2,0x20(%esi)				|
+	ret->session_cache_size=SSL_SESSION_CACHE_MAX_SIZE_DEFAULT;			|
+   2d476:	c7 46 14 00 50 00 00 	movl   $0x5000,0x14(%esi)			|
+	ret->session_cache_head=NULL;							|
+   2d47d:	c7 46 18 00 00 00 00 	movl   $0x0,0x18(%esi)				|
+	ret->session_cache_tail=NULL;							|
+   2d484:	c7 46 1c 00 00 00 00 	movl   $0x0,0x1c(%esi)				|
+											|
+	/* We take the system default */						|
+	ret->session_timeout=meth->get_timeout();					|
+   2d48b:	ff 57 60             	call   *0x60(%edi)				|
+   2d48e:	89 46 24             	mov    %eax,0x24(%esi)				|
+											|
+	ret->new_session_cb=0;								|
+   2d491:	c7 46 28 00 00 00 00 	movl   $0x0,0x28(%esi)				|
+	ret->remove_session_cb=0;							|
+   2d498:	c7 46 2c 00 00 00 00 	movl   $0x0,0x2c(%esi)				|
+	ret->get_session_cb=0;								|
+   2d49f:	c7 46 30 00 00 00 00 	movl   $0x0,0x30(%esi)				|
+	ret->generate_session_id=0;							|
+   2d4a6:	c7 86 ec 00 00 00 00 	movl   $0x0,0xec(%esi)				|
+   2d4ad:	00 00 00 								|
+											|
+	memset((char *)&ret->stats,0,sizeof(ret->stats));				|
+   2d4b0:	8d 7e 34             	lea    0x34(%esi),%edi				|
+   2d4b3:	fc                   	cld    						|
+   2d4b4:	b9 0b 00 00 00       	mov    $0xb,%ecx				|
+   2d4b9:	31 c0                	xor    %eax,%eax				|
+   2d4bb:	f3 ab                	rep stos %eax,%es:(%edi)			|
+											|
+	ret->references=1;								|
+   2d4bd:	c7 46 60 01 00 00 00 	movl   $0x1,0x60(%esi)				|
+	ret->quiet_shutdown=0;								|
+   2d4c4:	c7 86 f4 00 00 00 00 	movl   $0x0,0xf4(%esi)				|
+   2d4cb:	00 00 00 								|
+/*	ret->s2->challenge=NULL;							|
+	ret->master_key=NULL;								|
+	ret->key_arg=NULL;								|
+	ret->s2->conn_id=NULL; */							|
+											|
+	ret->info_callback=NULL;							|
+   2d4ce:	c7 86 9c 00 00 00 00 	movl   $0x0,0x9c(%esi)				|
+   2d4d5:	00 00 00 								|
+											|
+	ret->app_verify_callback=0;							|
+   2d4d8:	c7 46 64 00 00 00 00 	movl   $0x0,0x64(%esi)				|
+	ret->app_verify_arg=NULL;							|
+   2d4df:	c7 46 68 00 00 00 00 	movl   $0x0,0x68(%esi)				|
+											|
+	ret->max_cert_list=SSL_MAX_CERT_LIST_DEFAULT;					|
+   2d4e6:	c7 86 ac 00 00 00 00 	movl   $0x19000,0xac(%esi)			|
+   2d4ed:	90 01 00 								|
+	ret->read_ahead=0;								|
+   2d4f0:	c7 86 b4 00 00 00 00 	movl   $0x0,0xb4(%esi)				|
+   2d4f7:	00 00 00 								|
+	ret->msg_callback=0;								|
+   2d4fa:	c7 86 b8 00 00 00 00 	movl   $0x0,0xb8(%esi)				|
+   2d501:	00 00 00 								|
+	ret->msg_callback_arg=NULL;							|
+   2d504:	c7 86 bc 00 00 00 00 	movl   $0x0,0xbc(%esi)				|
+   2d50b:	00 00 00 								|
+	ret->verify_mode=SSL_VERIFY_NONE;						|
+   2d50e:	c7 86 c0 00 00 00 00 	movl   $0x0,0xc0(%esi)				|
+   2d515:	00 00 00 								|
+#if 0											|
+	ret->verify_depth=-1; /* Don't impose a limit (but x509_lu.c does) */		|
+#endif											|
+	ret->sid_ctx_length=0;								|
+   2d518:	c7 86 c4 00 00 00 00 	movl   $0x0,0xc4(%esi)				|
+   2d51f:	00 00 00 								|
+	ret->default_verify_callback=NULL;						|
+   2d522:	c7 86 e8 00 00 00 00 	movl   $0x0,0xe8(%esi)				|
+   2d529:	00 00 00 								|
+	if ((ret->cert=ssl_cert_new()) == NULL)						|
+   2d52c:	e8 f5 23 00 00       	call   2f926 <ssl_cert_new>			|
+   2d531:	89 86 b0 00 00 00    	mov    %eax,0xb0(%esi)				|
+   2d537:	85 c0                	test   %eax,%eax				|
+   2d539:	0f 84 fa 01 00 00    	je     2d739 <SSL_CTX_new+0x33e>		|
+		goto err;								|
+											|
+	ret->default_passwd_callback=0;							|
+   2d53f:	c7 46 6c 00 00 00 00 	movl   $0x0,0x6c(%esi)				|
+	ret->default_passwd_callback_userdata=NULL;					|
+   2d546:	c7 46 70 00 00 00 00 	movl   $0x0,0x70(%esi)				|
+	ret->client_cert_cb=0;								|
+   2d54d:	c7 46 74 00 00 00 00 	movl   $0x0,0x74(%esi)				|
+	ret->app_gen_cookie_cb=0;							|
+   2d554:	c7 46 78 00 00 00 00 	movl   $0x0,0x78(%esi)				|
+	ret->app_verify_cookie_cb=0;							|
+   2d55b:	c7 46 7c 00 00 00 00 	movl   $0x0,0x7c(%esi)				|
+											|
+	ret->sessions=lh_new(LHASH_HASH_FN(SSL_SESSION_hash),				|
+   2d562:	8d 8b c3 d8 fe ff    	lea    -0x1273d(%ebx),%ecx			|
+   2d568:	89 4c 24 04          	mov    %ecx,0x4(%esp)				|
+   2d56c:	8d 93 dd b7 fe ff    	lea    -0x14823(%ebx),%edx			|
+   2d572:	89 14 24             	mov    %edx,(%esp)				|
+   2d575:	e8 c6 d6 fd ff       	call   ac40 <lh_new@plt>			|
+   2d57a:	89 46 10             	mov    %eax,0x10(%esi)				|
+			LHASH_COMP_FN(SSL_SESSION_cmp));				|
+	if (ret->sessions == NULL) goto err;						|
+   2d57d:	85 c0                	test   %eax,%eax				|
+   2d57f:	0f 84 b4 01 00 00    	je     2d739 <SSL_CTX_new+0x33e>		|
+	ret->cert_store=X509_STORE_new();						|
+   2d585:	e8 b6 d8 fd ff       	call   ae40 <X509_STORE_new@plt>		|
+   2d58a:	89 46 0c             	mov    %eax,0xc(%esi)				|
+	if (ret->cert_store == NULL) goto err;						|
+   2d58d:	85 c0                	test   %eax,%eax				|
+   2d58f:	0f 84 a4 01 00 00    	je     2d739 <SSL_CTX_new+0x33e>		|
+											|
+	ssl_create_cipher_list(ret->method,						|
+   2d595:	8d 8b c8 9b ff ff    	lea    -0x6438(%ebx),%ecx			|
+   2d59b:	89 4c 24 0c          	mov    %ecx,0xc(%esp)				|
+   2d59f:	8d 56 08             	lea    0x8(%esi),%edx				|
+   2d5a2:	89 54 24 08          	mov    %edx,0x8(%esp)				|
+   2d5a6:	8d 46 04             	lea    0x4(%esi),%eax				|
+   2d5a9:	89 44 24 04          	mov    %eax,0x4(%esp)				|
+   2d5ad:	8b 3e                	mov    (%esi),%edi				|
+   2d5af:	89 3c 24             	mov    %edi,(%esp)				|
+   2d5b2:	e8 e3 53 00 00       	call   3299a <ssl_create_cipher_list>		|
+		&ret->cipher_list,&ret->cipher_list_by_id,				|
+		SSL_DEFAULT_CIPHER_LIST);						|
+	if (ret->cipher_list == NULL							|
+   2d5b7:	8b 46 04             	mov    0x4(%esi),%eax				|
+   2d5ba:	85 c0                	test   %eax,%eax				|
+   2d5bc:	0f 84 c1 01 00 00    	je     2d783 <SSL_CTX_new+0x388>		|
+   2d5c2:	89 04 24             	mov    %eax,(%esp)				|
+   2d5c5:	e8 86 df fd ff       	call   b550 <sk_num@plt>			|
+   2d5ca:	85 c0                	test   %eax,%eax				|
+   2d5cc:	0f 8e b1 01 00 00    	jle    2d783 <SSL_CTX_new+0x388>		|
+		{									|
+		SSLerr(SSL_F_SSL_CTX_NEW,SSL_R_LIBRARY_HAS_NO_CIPHERS);			|
+		goto err2;								|
+		}									|
+											|
+	ret->param = X509_VERIFY_PARAM_new();						|
+   2d5d2:	e8 39 e5 fd ff       	call   bb10 <X509_VERIFY_PARAM_new@plt>		|
+   2d5d7:	89 86 f0 00 00 00    	mov    %eax,0xf0(%esi)				|
+	if (!ret->param)								|
+   2d5dd:	85 c0                	test   %eax,%eax				|
+   2d5df:	0f 84 54 01 00 00    	je     2d739 <SSL_CTX_new+0x33e>		|
+		goto err;								|
+											|
+											|
+	if ((ret->rsa_md5=EVP_get_digestbyname("ssl2-md5")) == NULL)			|
+   2d5e5:	8d bb 8e 9b ff ff    	lea    -0x6472(%ebx),%edi			|   2e78a:	8d bb 6a a6 ff ff    	lea    -0x5996(%ebx),%edi			
+   2d5eb:	89 3c 24             	mov    %edi,(%esp)				|   2e790:	89 3c 24             	mov    %edi,(%esp)				
+   2d5ee:	e8 0d e1 fd ff       	call   b700 <EVP_get_digestbyname@plt>		|   2e793:	e8 70 cf fd ff       	call   b708 <EVP_get_digestbyname@plt>		
+   2d5f3:	89 86 88 00 00 00    	mov    %eax,0x88(%esi)				|   2e798:	85 c0                	test   %eax,%eax				
+   2d5f9:	85 c0                	test   %eax,%eax				|   2e79a:	89 86 88 00 00 00    	mov    %eax,0x88(%esi)				
+   2d5fb:	0f 84 ac 01 00 00    	je     2d7ad <SSL_CTX_new+0x3b2>		|   2e7a0:	0f 84 de 01 00 00    	je     2e984 <SSL_CTX_new+0x3e4>		
+		{									|
+		SSLerr(SSL_F_SSL_CTX_NEW,SSL_R_UNABLE_TO_LOAD_SSL2_MD5_ROUTINES);	|
+		goto err2;								|
+		}									|
+	if ((ret->md5=EVP_get_digestbyname("ssl3-md5")) == NULL)			|
+   2d601:	8d 83 97 9b ff ff    	lea    -0x6469(%ebx),%eax			|   2e7a6:	8d 83 73 a6 ff ff    	lea    -0x598d(%ebx),%eax			
+   2d607:	89 04 24             	mov    %eax,(%esp)				|   2e7ac:	89 04 24             	mov    %eax,(%esp)				
+   2d60a:	e8 f1 e0 fd ff       	call   b700 <EVP_get_digestbyname@plt>		|   2e7af:	e8 54 cf fd ff       	call   b708 <EVP_get_digestbyname@plt>		
+   2d60f:	89 86 8c 00 00 00    	mov    %eax,0x8c(%esi)				|   2e7b4:	85 c0                	test   %eax,%eax				
+   2d615:	85 c0                	test   %eax,%eax				|   2e7b6:	89 86 8c 00 00 00    	mov    %eax,0x8c(%esi)				
+   2d617:	0f 84 fe 01 00 00    	je     2d81b <SSL_CTX_new+0x420>		|   2e7bc:	0f 84 30 02 00 00    	je     2e9f2 <SSL_CTX_new+0x452>		
+		{									|
+		SSLerr(SSL_F_SSL_CTX_NEW,SSL_R_UNABLE_TO_LOAD_SSL3_MD5_ROUTINES);	|
+		goto err2;								|
+		}									|
+	if ((ret->sha1=EVP_get_digestbyname("ssl3-sha1")) == NULL)			|
+   2d61d:	8d 93 a0 9b ff ff    	lea    -0x6460(%ebx),%edx			|   2e7c2:	8d 93 7c a6 ff ff    	lea    -0x5984(%ebx),%edx			
+   2d623:	89 14 24             	mov    %edx,(%esp)				|   2e7c8:	89 14 24             	mov    %edx,(%esp)				
+   2d626:	e8 d5 e0 fd ff       	call   b700 <EVP_get_digestbyname@plt>		|   2e7cb:	e8 38 cf fd ff       	call   b708 <EVP_get_digestbyname@plt>		
+   2d62b:	89 86 90 00 00 00    	mov    %eax,0x90(%esi)				|   2e7d0:	85 c0                	test   %eax,%eax				
+   2d631:	85 c0                	test   %eax,%eax				|   2e7d2:	89 86 90 00 00 00    	mov    %eax,0x90(%esi)				
+   2d633:	0f 84 0f 02 00 00    	je     2d848 <SSL_CTX_new+0x44d>		|   2e7d8:	0f 84 41 02 00 00    	je     2ea1f <SSL_CTX_new+0x47f>		
+		{     	       		       	     					|
+		SSLerr(SSL_F_SSL_CTX_NEW,SSL_R_UNABLE_TO_LOAD_SSL3_SHA1_ROUTINES);	|
+		goto err2;								|
+		}									|
+											|
+	if ((ret->client_CA=sk_X509_NAME_new_null()) == NULL)				|
+   2d639:	e8 92 e2 fd ff       	call   b8d0 <sk_new_null@plt>			|   2e7de:	e8 05 d1 fd ff       	call   b8e8 <sk_new_null@plt>			
+   2d63e:	89 86 a0 00 00 00    	mov    %eax,0xa0(%esi)				|   2e7e3:	85 c0                	test   %eax,%eax				
+   2d644:	85 c0                	test   %eax,%eax				|   2e7e5:	89 86 a0 00 00 00    	mov    %eax,0xa0(%esi)				
+   2d646:	0f 84 ed 00 00 00    	je     2d739 <SSL_CTX_new+0x33e>		|   2e7eb:	0f 84 1f 01 00 00    	je     2e910 <SSL_CTX_new+0x370>		
+		goto err;								|
+											|
+	CRYPTO_new_ex_data(CRYPTO_EX_INDEX_SSL_CTX, ret, &ret->ex_data);		|
+   2d64c:	8d 8e 80 00 00 00    	lea    0x80(%esi),%ecx				|   2e7f1:	8d 8e 80 00 00 00    	lea    0x80(%esi),%ecx				
+   2d652:	89 4c 24 08          	mov    %ecx,0x8(%esp)				|   2e7f7:	89 4c 24 08          	mov    %ecx,0x8(%esp)				
+   2d656:	89 74 24 04          	mov    %esi,0x4(%esp)				|   2e7fb:	8d ae 04 01 00 00    	lea    0x104(%esi),%ebp				
+   2d65a:	c7 04 24 02 00 00 00 	movl   $0x2,(%esp)				|   2e801:	89 74 24 04          	mov    %esi,0x4(%esp)				
+   2d661:	e8 7a d6 fd ff       	call   ace0 <CRYPTO_new_ex_data@plt>		|   2e805:	c7 04 24 02 00 00 00 	movl   $0x2,(%esp)				
+											|   2e80c:	e8 c7 c4 fd ff       	call   acd8 <CRYPTO_new_ex_data@plt>		
+	ret->extra_certs=NULL;								|
+   2d666:	c7 86 94 00 00 00 00 	movl   $0x0,0x94(%esi)				|   2e811:	c7 86 94 00 00 00 00 	movl   $0x0,0x94(%esi)				
+   2d66d:	00 00 00 								|   2e818:	00 00 00 								
+	ret->comp_methods=SSL_COMP_get_compression_methods();				|
+   2d670:	e8 2c 48 00 00       	call   31ea1 <SSL_COMP_get_compression_methods>	|   2e81b:	e8 f0 4a 00 00       	call   33310 <SSL_COMP_get_compression_methods>	
+   2d675:	89 86 98 00 00 00    	mov    %eax,0x98(%esi)				|
+											|
+#ifndef OPENSSL_NO_TLSEXT								|
+	ret->tlsext_servername_callback = 0;						|
+   2d67b:	c7 86 fc 00 00 00 00 	movl   $0x0,0xfc(%esi)				|   2e820:	c7 86 fc 00 00 00 00 	movl   $0x0,0xfc(%esi)				
+   2d682:	00 00 00 								|   2e827:	00 00 00 								
+	ret->tlsext_servername_arg = NULL;						|   2e82a:	c7 86 00 01 00 00 00 	movl   $0x0,0x100(%esi)				
+   2d685:	c7 86 00 01 00 00 00 	movl   $0x0,0x100(%esi)				|   2e831:	00 00 00 								
+   2d68c:	00 00 00 								|   2e834:	89 86 98 00 00 00    	mov    %eax,0x98(%esi)				
+	/* Setup RFC4507 ticket keys */							|
+	if ((RAND_pseudo_bytes(ret->tlsext_tick_key_name, 16) <= 0)			|
+   2d68f:	c7 44 24 04 10 00 00 	movl   $0x10,0x4(%esp)				|   2e83a:	c7 44 24 04 10 00 00 	movl   $0x10,0x4(%esp)				
+   2d696:	00 									|   2e841:	00 									
+   2d697:	8d ae 04 01 00 00    	lea    0x104(%esi),%ebp				|   2e842:	89 2c 24             	mov    %ebp,(%esp)				
+   2d69d:	89 2c 24             	mov    %ebp,(%esp)				|   2e845:	e8 fe ce fd ff       	call   b748 <RAND_pseudo_bytes@plt>		
+   2d6a0:	e8 9b e0 fd ff       	call   b740 <RAND_pseudo_bytes@plt>		|   2e84a:	85 c0                	test   %eax,%eax				
+   2d6a5:	85 c0                	test   %eax,%eax				|   2e84c:	0f 8e 91 01 00 00    	jle    2e9e3 <SSL_CTX_new+0x443>		
+   2d6a7:	0f 8e 5f 01 00 00    	jle    2d80c <SSL_CTX_new+0x411>		|   2e852:	8d be 14 01 00 00    	lea    0x114(%esi),%edi				
+   2d6ad:	c7 44 24 04 10 00 00 	movl   $0x10,0x4(%esp)				|   2e858:	c7 44 24 04 10 00 00 	movl   $0x10,0x4(%esp)				
+   2d6b4:	00 									|   2e85f:	00 									
+   2d6b5:	8d be 14 01 00 00    	lea    0x114(%esi),%edi				|   2e860:	89 3c 24             	mov    %edi,(%esp)				
+   2d6bb:	89 3c 24             	mov    %edi,(%esp)				|   2e863:	e8 50 c9 fd ff       	call   b1b8 <RAND_bytes@plt>			
+   2d6be:	e8 fd da fd ff       	call   b1c0 <RAND_bytes@plt>			|   2e868:	85 c0                	test   %eax,%eax				
+   2d6c3:	85 c0                	test   %eax,%eax				|   2e86a:	0f 8e 73 01 00 00    	jle    2e9e3 <SSL_CTX_new+0x443>		
+   2d6c5:	0f 8e 41 01 00 00    	jle    2d80c <SSL_CTX_new+0x411>		|   2e870:	8d 86 24 01 00 00    	lea    0x124(%esi),%eax				
+   2d6cb:	c7 44 24 04 10 00 00 	movl   $0x10,0x4(%esp)				|   2e876:	c7 44 24 04 10 00 00 	movl   $0x10,0x4(%esp)				
+   2d6d2:	00 									|   2e87d:	00 									
+   2d6d3:	8d 86 24 01 00 00    	lea    0x124(%esi),%eax				|   2e87e:	89 04 24             	mov    %eax,(%esp)				
+   2d6d9:	89 04 24             	mov    %eax,(%esp)				|   2e881:	e8 32 c9 fd ff       	call   b1b8 <RAND_bytes@plt>			
+   2d6dc:	e8 df da fd ff       	call   b1c0 <RAND_bytes@plt>			|   2e886:	85 c0                	test   %eax,%eax				
+   2d6e1:	85 c0                	test   %eax,%eax				|   2e888:	0f 8e 55 01 00 00    	jle    2e9e3 <SSL_CTX_new+0x443>		
+   2d6e3:	0f 8e 23 01 00 00    	jle    2d80c <SSL_CTX_new+0x411>		|
+		|| (RAND_bytes(ret->tlsext_tick_hmac_key, 16) <= 0)			|
+		|| (RAND_bytes(ret->tlsext_tick_aes_key, 16) <= 0))			|
+		ret->options |= SSL_OP_NO_TICKET;					|
+											|
+	ret->tlsext_status_cb = 0;							|
+   2d6e9:	c7 86 38 01 00 00 00 	movl   $0x0,0x138(%esi)				|   2e88e:	c7 86 38 01 00 00 00 	movl   $0x0,0x138(%esi)				
+   2d6f0:	00 00 00 								|   2e895:	00 00 00 								
+   		      									|
+>>> // reference "/var/ssl/trustedcerts" 						|   2e898:	8d ab 86 a6 ff ff    	lea    -0x597a(%ebx),%ebp			
+     			   								|
+	ret->tlsext_status_arg = NULL;							|
+   2d6f3:	c7 86 3c 01 00 00 00 	movl   $0x0,0x13c(%esi)				|   2e89e:	c7 86 3c 01 00 00 00 	movl   $0x0,0x13c(%esi)				
+   2d6fa:	00 00 00 								|   2e8a5:	00 00 00 								
+											|
+#ifndef OPENSSL_NO_ENGINE								|
+	ret->client_cert_engine = NULL;							|
+   2d6fd:	c7 86 f8 00 00 00 00 	movl   $0x0,0xf8(%esi)				|   2e8a8:	c7 86 f8 00 00 00 00 	movl   $0x0,0xf8(%esi)				
+   2d704:	00 00 00 								|   2e8af:	00 00 00 								
+											|
+>>>>											|   2e8b2:	89 6c 24 08          	mov    %ebp,0x8(%esp)				
+>>>>											|   2e8b6:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)				
+>>>>											|   2e8bd:	00 									
+>>>>											|   2e8be:	89 34 24             	mov    %esi,(%esp)				
+>>>> SSL_CTX_load_verify_locations(ret, NULL, "/var/ssl/trustedcerts");			|   2e8c1:	e8 0a e5 ff ff       	call   2cdd0 <SSL_CTX_load_verify_locations>	
+>>>> // reference "ALL:!LOW:!EXP:!ADH:!IDEA:@STRENGTH"					|   2e8c6:	8d 93 e0 a6 ff ff    	lea    -0x5920(%ebx),%edx			
+>>>>											|   2e8cc:	89 54 24 04          	mov    %edx,0x4(%esp)				
+>>>>											|   2e8d0:	89 34 24             	mov    %esi,(%esp)				
+>>>> SSL_CTX_set_cipher_list(ret, "ALL:!LOW:!EXP:!ADH:!IDEA:@STRENGTH");		|   2e8d3:	e8 a8 fb ff ff       	call   2e480 <SSL_CTX_set_cipher_list>		
+>>>>											|
+   2d707:	eb 5c                	jmp    2d765 <SSL_CTX_new+0x36a>		|   2e8d8:	eb 62                	jmp    2e93c <SSL_CTX_new+0x39c>		
+		}									|
+#endif											|
+
+	if (SSL_get_ex_data_X509_STORE_CTX_idx() < 0)					|
+		{									|
+		SSLerr(SSL_F_SSL_CTX_NEW,SSL_R_X509_VERIFICATION_SETUP_PROBLEMS);	|
+   2d709:	c7 44 24 10 83 05 00 	movl   $0x583,0x10(%esp)			|   2e8da:	8d ab 60 a6 ff ff    	lea    -0x59a0(%ebx),%ebp			
+   2d710:	00 									|   2e8e0:	31 f6                	xor    %esi,%esi				
+   2d711:	8d ab 84 9b ff ff    	lea    -0x647c(%ebx),%ebp			|   2e8e2:	c7 44 24 10 83 05 00 	movl   $0x583,0x10(%esp)			
+											|   2e8e9:	00 									
+   2d717:	89 6c 24 0c          	mov    %ebp,0xc(%esp)				|   2e8ea:	89 6c 24 0c          	mov    %ebp,0xc(%esp)				
+   2d71b:	c7 44 24 08 0d 01 00 	movl   $0x10d,0x8(%esp)				|   2e8ee:	c7 44 24 08 0d 01 00 	movl   $0x10d,0x8(%esp)				
+   2d722:	00 									|   2e8f5:	00 									
+   2d723:	c7 44 24 04 a9 00 00 	movl   $0xa9,0x4(%esp)				|   2e8f6:	c7 44 24 04 a9 00 00 	movl   $0xa9,0x4(%esp)				
+   2d72a:	00 									|   2e8fd:	00 									
+   2d72b:	c7 04 24 14 00 00 00 	movl   $0x14,(%esp)				|   2e8fe:	c7 04 24 14 00 00 00 	movl   $0x14,(%esp)				
+   2d732:	e8 59 e4 fd ff       	call   bb90 <ERR_put_error@plt>			|   2e905:	e8 9e d2 fd ff       	call   bba8 <ERR_put_error@plt>			
+   2d737:	31 f6                	xor    %esi,%esi				|   2e90a:	8d b6 00 00 00 00    	lea    0x0(%esi),%esi				
+#endif											|
+#endif											|
+											|
+	return(ret);									|
+err:											|
+	SSLerr(SSL_F_SSL_CTX_NEW,ERR_R_MALLOC_FAILURE);					|
+   2d739:	c7 44 24 10 10 06 00 	movl   $0x610,0x10(%esp)			|   2e910:	c7 44 24 10 17 06 00 	movl   $0x617,0x10(%esp)			
+   2d740:	00 									|   2e917:	00 									
+   2d741:	89 6c 24 0c          	mov    %ebp,0xc(%esp)				|   2e918:	89 6c 24 0c          	mov    %ebp,0xc(%esp)				
+   2d745:	c7 44 24 08 41 00 00 	movl   $0x41,0x8(%esp)				|   2e91c:	c7 44 24 08 41 00 00 	movl   $0x41,0x8(%esp)				
+   2d74c:	00 									|   2e923:	00 									
+   2d74d:	c7 44 24 04 a9 00 00 	movl   $0xa9,0x4(%esp)				|   2e924:	c7 44 24 04 a9 00 00 	movl   $0xa9,0x4(%esp)				
+   2d754:	00 									|   2e92b:	00 									
+   2d755:	c7 04 24 14 00 00 00 	movl   $0x14,(%esp)				|   2e92c:	c7 04 24 14 00 00 00 	movl   $0x14,(%esp)				
+   2d75c:	e8 2f e4 fd ff       	call   bb90 <ERR_put_error@plt>			|   2e933:	e8 70 d2 fd ff       	call   bba8 <ERR_put_error@plt>			
+err2:											|
+	if (ret != NULL) SSL_CTX_free(ret);						|
+   2d761:	85 f6                	test   %esi,%esi				|   2e938:	85 f6                	test   %esi,%esi				
+   2d763:	75 0a                	jne    2d76f <SSL_CTX_new+0x374>		|   2e93a:	75 0a                	jne    2e946 <SSL_CTX_new+0x3a6>		
+	return(NULL);									|
+	}										|
+   2d765:	89 f0                	mov    %esi,%eax				|   2e93c:	83 c4 1c             	add    $0x1c,%esp				
+   2d767:	83 c4 1c             	add    $0x1c,%esp				|   2e93f:	89 f0                	mov    %esi,%eax				
+   2d76a:	5b                   	pop    %ebx					|   2e941:	5b                   	pop    %ebx					
+   2d76b:	5e                   	pop    %esi					|   2e942:	5e                   	pop    %esi					
+   2d76c:	5f                   	pop    %edi					|   2e943:	5f                   	pop    %edi					
+   2d76d:	5d                   	pop    %ebp					|   2e944:	5d                   	pop    %ebp					
+   2d76e:	c3                   	ret    						|   2e945:	c3                   	ret    						
+											|
+	return(ret);									|
+err:											|
+	SSLerr(SSL_F_SSL_CTX_NEW,ERR_R_MALLOC_FAILURE);					|
+err2:											|
+	if (ret != NULL) SSL_CTX_free(ret);						|
+   2d76f:	89 34 24             	mov    %esi,(%esp)				|   2e946:	89 34 24             	mov    %esi,(%esp)				
+   2d772:	e8 fd f8 ff ff       	call   2d074 <SSL_CTX_free>			|   2e949:	31 f6                	xor    %esi,%esi				
+   2d777:	31 f6                	xor    %esi,%esi				|   2e94b:	e8 90 f8 ff ff       	call   2e1e0 <SSL_CTX_free>			
+	return(NULL);									|
+	}										|
+   2d779:	89 f0                	mov    %esi,%eax				|   2e950:	83 c4 1c             	add    $0x1c,%esp				
+   2d77b:	83 c4 1c             	add    $0x1c,%esp				|   2e953:	89 f0                	mov    %esi,%eax				
+   2d77e:	5b                   	pop    %ebx					|   2e955:	5b                   	pop    %ebx					
+   2d77f:	5e                   	pop    %esi					|   2e956:	5e                   	pop    %esi					
+   2d780:	5f                   	pop    %edi					|   2e957:	5f                   	pop    %edi					
+   2d781:	5d                   	pop    %ebp					|   2e958:	5d                   	pop    %ebp					
+   2d782:	c3                   	ret    						|   2e959:	c3                   	ret    						
+		&ret->cipher_list,&ret->cipher_list_by_id,				|
+		SSL_DEFAULT_CIPHER_LIST);						|
+	if (ret->cipher_list == NULL							|
+	    || sk_SSL_CIPHER_num(ret->cipher_list) <= 0)				|
+		{									|
+		SSLerr(SSL_F_SSL_CTX_NEW,SSL_R_LIBRARY_HAS_NO_CIPHERS);			|
+   2d783:	c7 44 24 10 cb 05 00 	movl   $0x5cb,0x10(%esp)			|   2e95a:	c7 44 24 10 cb 05 00 	movl   $0x5cb,0x10(%esp)			
+   2d78a:	00 									|   2e961:	00 									
+   2d78b:	89 6c 24 0c          	mov    %ebp,0xc(%esp)				|   2e962:	89 6c 24 0c          	mov    %ebp,0xc(%esp)				
+   2d78f:	c7 44 24 08 a1 00 00 	movl   $0xa1,0x8(%esp)				|   2e966:	c7 44 24 08 a1 00 00 	movl   $0xa1,0x8(%esp)				
+   2d796:	00 									|   2e96d:	00 									
+   2d797:	c7 44 24 04 a9 00 00 	movl   $0xa9,0x4(%esp)				|   2e96e:	c7 44 24 04 a9 00 00 	movl   $0xa9,0x4(%esp)				
+   2d79e:	00 									|   2e975:	00 									
+   2d79f:	c7 04 24 14 00 00 00 	movl   $0x14,(%esp)				|   2e976:	c7 04 24 14 00 00 00 	movl   $0x14,(%esp)				
+   2d7a6:	e8 e5 e3 fd ff       	call   bb90 <ERR_put_error@plt>			|   2e97d:	e8 26 d2 fd ff       	call   bba8 <ERR_put_error@plt>			
+   2d7ab:	eb b4                	jmp    2d761 <SSL_CTX_new+0x366>		|   2e982:	eb b4                	jmp    2e938 <SSL_CTX_new+0x398>		
+	if (!ret->param)								|
+		goto err;								|
+											|
+	if ((ret->rsa_md5=EVP_get_digestbyname("ssl2-md5")) == NULL)			|
+		{									|
+		SSLerr(SSL_F_SSL_CTX_NEW,SSL_R_UNABLE_TO_LOAD_SSL2_MD5_ROUTINES);	|
+   2d7ad:	c7 44 24 10 d5 05 00 	movl   $0x5d5,0x10(%esp)			|   2e984:	c7 44 24 10 d5 05 00 	movl   $0x5d5,0x10(%esp)			
+   2d7b4:	00 									|   2e98b:	00 									
+   2d7b5:	89 6c 24 0c          	mov    %ebp,0xc(%esp)				|   2e98c:	89 6c 24 0c          	mov    %ebp,0xc(%esp)				
+   2d7b9:	c7 44 24 08 f1 00 00 	movl   $0xf1,0x8(%esp)				|   2e990:	c7 44 24 08 f1 00 00 	movl   $0xf1,0x8(%esp)				
+   2d7c0:	00 									|   2e997:	00 									
+   2d7c1:	c7 44 24 04 a9 00 00 	movl   $0xa9,0x4(%esp)				|   2e998:	c7 44 24 04 a9 00 00 	movl   $0xa9,0x4(%esp)				
+   2d7c8:	00 									|   2e99f:	00 									
+   2d7c9:	c7 04 24 14 00 00 00 	movl   $0x14,(%esp)				|   2e9a0:	c7 04 24 14 00 00 00 	movl   $0x14,(%esp)				
+   2d7d0:	e8 bb e3 fd ff       	call   bb90 <ERR_put_error@plt>			|   2e9a7:	e8 fc d1 fd ff       	call   bba8 <ERR_put_error@plt>			
+   2d7d5:	eb 8a                	jmp    2d761 <SSL_CTX_new+0x366>		|   2e9ac:	eb 8a                	jmp    2e938 <SSL_CTX_new+0x398>		
+	{										|
+	SSL_CTX *ret=NULL;								|
+											|
+	if (meth == NULL)								|
+		{									|
+		SSLerr(SSL_F_SSL_CTX_NEW,SSL_R_NULL_SSL_METHOD_PASSED);			|
+   2d7d7:	c7 44 24 10 75 05 00 	movl   $0x575,0x10(%esp)			|   2e9ae:	8d 83 60 a6 ff ff    	lea    -0x59a0(%ebx),%eax			
+   2d7de:	00 									|   2e9b4:	31 f6                	xor    %esi,%esi				
+   2d7df:	8d 83 84 9b ff ff    	lea    -0x647c(%ebx),%eax			|   2e9b6:	c7 44 24 10 75 05 00 	movl   $0x575,0x10(%esp)			
+   2d7e5:	89 44 24 0c          	mov    %eax,0xc(%esp)				|   2e9bd:	00 									
+   2d7e9:	c7 44 24 08 c4 00 00 	movl   $0xc4,0x8(%esp)				|   2e9be:	89 44 24 0c          	mov    %eax,0xc(%esp)				
+   2d7f0:	00 									|   2e9c2:	c7 44 24 08 c4 00 00 	movl   $0xc4,0x8(%esp)				
+   2d7f1:	c7 44 24 04 a9 00 00 	movl   $0xa9,0x4(%esp)				|   2e9c9:	00 									
+   2d7f8:	00 									|   2e9ca:	c7 44 24 04 a9 00 00 	movl   $0xa9,0x4(%esp)				
+   2d7f9:	c7 04 24 14 00 00 00 	movl   $0x14,(%esp)				|   2e9d1:	00 									
+   2d800:	e8 8b e3 fd ff       	call   bb90 <ERR_put_error@plt>			|   2e9d2:	c7 04 24 14 00 00 00 	movl   $0x14,(%esp)				
+   2d805:	31 f6                	xor    %esi,%esi				|   2e9d9:	e8 ca d1 fd ff       	call   bba8 <ERR_put_error@plt>			
+   2d807:	e9 59 ff ff ff       	jmp    2d765 <SSL_CTX_new+0x36a>		|   2e9de:	e9 59 ff ff ff       	jmp    2e93c <SSL_CTX_new+0x39c>		
+	ret->tlsext_servername_arg = NULL;						|
+	/* Setup RFC4507 ticket keys */							|
+	if ((RAND_pseudo_bytes(ret->tlsext_tick_key_name, 16) <= 0)			|
+		|| (RAND_bytes(ret->tlsext_tick_hmac_key, 16) <= 0)			|
+		|| (RAND_bytes(ret->tlsext_tick_aes_key, 16) <= 0))			|
+		ret->options |= SSL_OP_NO_TICKET;					|
+   2d80c:	81 8e a4 00 00 00 00 	orl    $0x4000,0xa4(%esi)			|   2e9e3:	81 8e a4 00 00 00 00 	orl    $0x4000,0xa4(%esi)			
+   2d813:	40 00 00 								|   2e9ea:	40 00 00 								
+   2d816:	e9 ce fe ff ff       	jmp    2d6e9 <SSL_CTX_new+0x2ee>		|   2e9ed:	e9 9c fe ff ff       	jmp    2e88e <SSL_CTX_new+0x2ee>		
+		SSLerr(SSL_F_SSL_CTX_NEW,SSL_R_UNABLE_TO_LOAD_SSL2_MD5_ROUTINES);	|
+		goto err2;								|
+		}									|
+	if ((ret->md5=EVP_get_digestbyname("ssl3-md5")) == NULL)			|
+		{									|
+		SSLerr(SSL_F_SSL_CTX_NEW,SSL_R_UNABLE_TO_LOAD_SSL3_MD5_ROUTINES);	|
+   2d81b:	c7 44 24 10 da 05 00 	movl   $0x5da,0x10(%esp)			|   2e9f2:	c7 44 24 10 da 05 00 	movl   $0x5da,0x10(%esp)			
+   2d822:	00 									|   2e9f9:	00 									
+   2d823:	89 6c 24 0c          	mov    %ebp,0xc(%esp)				|   2e9fa:	89 6c 24 0c          	mov    %ebp,0xc(%esp)				
+   2d827:	c7 44 24 08 f2 00 00 	movl   $0xf2,0x8(%esp)				|   2e9fe:	c7 44 24 08 f2 00 00 	movl   $0xf2,0x8(%esp)				
+   2d82e:	00 									|   2ea05:	00 									
+   2d82f:	c7 44 24 04 a9 00 00 	movl   $0xa9,0x4(%esp)				|   2ea06:	c7 44 24 04 a9 00 00 	movl   $0xa9,0x4(%esp)				
+   2d836:	00 									|   2ea0d:	00 									
+   2d837:	c7 04 24 14 00 00 00 	movl   $0x14,(%esp)				|   2ea0e:	c7 04 24 14 00 00 00 	movl   $0x14,(%esp)				
+   2d83e:	e8 4d e3 fd ff       	call   bb90 <ERR_put_error@plt>			|   2ea15:	e8 8e d1 fd ff       	call   bba8 <ERR_put_error@plt>			
+   2d843:	e9 19 ff ff ff       	jmp    2d761 <SSL_CTX_new+0x366>		|   2ea1a:	e9 19 ff ff ff       	jmp    2e938 <SSL_CTX_new+0x398>		
+		goto err2;								|
+		}									|
+	if ((ret->sha1=EVP_get_digestbyname("ssl3-sha1")) == NULL)			|
+		{									|
+		SSLerr(SSL_F_SSL_CTX_NEW,SSL_R_UNABLE_TO_LOAD_SSL3_SHA1_ROUTINES);	|
+   2d848:	c7 44 24 10 df 05 00 	movl   $0x5df,0x10(%esp)			|   2ea1f:	c7 44 24 10 df 05 00 	movl   $0x5df,0x10(%esp)			
+   2d84f:	00 									|   2ea26:	00 									
+   2d850:	89 6c 24 0c          	mov    %ebp,0xc(%esp)				|   2ea27:	89 6c 24 0c          	mov    %ebp,0xc(%esp)				
+   2d854:	c7 44 24 08 f3 00 00 	movl   $0xf3,0x8(%esp)				|   2ea2b:	c7 44 24 08 f3 00 00 	movl   $0xf3,0x8(%esp)				
+   2d85b:	00 									|   2ea32:	00 									
+   2d85c:	c7 44 24 04 a9 00 00 	movl   $0xa9,0x4(%esp)				|   2ea33:	c7 44 24 04 a9 00 00 	movl   $0xa9,0x4(%esp)				
+   2d863:	00 									|   2ea3a:	00 									
+   2d864:	c7 04 24 14 00 00 00 	movl   $0x14,(%esp)				|   2ea3b:	c7 04 24 14 00 00 00 	movl   $0x14,(%esp)				
+   2d86b:	e8 20 e3 fd ff       	call   bb90 <ERR_put_error@plt>			|   2ea42:	e8 61 d1 fd ff       	call   bba8 <ERR_put_error@plt>			
+   2d870:	e9 ec fe ff ff       	jmp    2d761 <SSL_CTX_new+0x366>		|   2ea47:	e9 ec fe ff ff       	jmp    2e938 <SSL_CTX_new+0x398>		
+   		      	    		       	     					|   2ea4c:	8d 74 26 00          	lea    0x0(%esi,%eiz,1),%esi			
+
+
+
+

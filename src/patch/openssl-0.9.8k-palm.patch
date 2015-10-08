@@ -1,0 +1,13 @@
+--- i686/ssl/ssl_lib.c	2015-09-26 11:29:47.007431757 +0200
++++ src/ssl/ssl_lib.c	2015-09-26 14:48:13.415432327 +0200
+@@ -1547,6 +1547,10 @@
+ #endif
+ #endif
+ 
++	/* Palm-specific extension... */
++	SSL_CTX_load_verify_locations(ret, NULL, "/var/ssl/trustedcerts");
++	SSL_CTX_set_cipher_list(ret, "ALL:!LOW:!EXP:!ADH:!IDEA:@STRENGTH");
++
+ 	return(ret);
+ err:
+ 	SSLerr(SSL_F_SSL_CTX_NEW,ERR_R_MALLOC_FAILURE);

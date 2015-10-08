@@ -1,0 +1,76 @@
+--- openssl-0.9.8k_i686_openssl-palm-strings.txt	2015-10-06 01:43:13.053580838 +0200
++++ openssl-0.9.8k_i686_openssl-dist-strings.txt	2015-10-06 01:43:24.261580685 +0200
+@@ -1,3 +1,4 @@
++tdp+
+ /lib/ld-linux.so.2
+ libssl.so.0.9.8
+ SSL_get_fd
+@@ -788,7 +789,6 @@
+ stdin
+ __assert_fail
+ fgets
+-strlen
+ memset
+ strstr
+ __errno_location
+@@ -3719,35 +3841,46 @@
+ lookup_fail
+-crl_reasons
+ do_body
+ msie_hack
+ preserve
+@@ -3778,24 +3924,24 @@
+ cert_status_cb
+ tlscstatp
+ enable_timeouts
+-str.20083
+ accept_socket
+ www_body
+ hack
+@@ -3877,37 +4028,36 @@
+ dsa512_p
+ dsa512_q
+ dsa512_g
+-rsa_data.16267
+-rsa_data_length.16268
+-key.16253
+-key2.16254
+-key3.16255
+-key16.16247
+-key24.16248
+-key32.16249
+-rsa_bits.16266
++test512
++test1024
++test2048
++test4096
++key.16270
++key2.16271
++key3.16272
++key16.16264
++key24.16265
++key32.16266
+ rsa_results
++rsa_bits.16283
+ rnd_seed
+ rnd_fake
+ ecdh_results
+-sep.20231
+-test512
+-test1024
+-test2048
+-test4096
++sep.20248
++s_time.c
+ doConnection
+ host
+ tm_ctx
+ tm_Time_F
+@@ -4461,7 +4628,6 @@
+ NETSCAPE_SPKI_new
+ ASN1_UNIVERSALSTRING_to_string
+ default_config_file
+-strlen@@GLIBC_2.0
+ PKCS12_get_attr_gen
+ ASN1_ENUMERATED_free
+ EVP_CipherInit_ex
