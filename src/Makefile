@@ -17,7 +17,7 @@
 # ===============================================================================
 
 NAME = openssl
-VERSION = 0.9.8k
+VERSION = 0.9.8zg
 
 DEPENDS =
 
@@ -32,7 +32,6 @@ SRC_TZJ = $(patsubst %gz,-z,$(patsubst %bz2,-j,$(SRC_PKG)))
 # PATCH
 #
 PATCH += $(wildcard patch/openssl-$(VERSION)-palm.patch)
-
 
 ifneq (,$(EAP_FAST))
 ifeq (0.9.8k,$(VERSION))
@@ -80,7 +79,7 @@ RANLIB = $(CROSS_COMPILE)ranlib
 
 # A remnant of the past...
 #
-SB2 = CC="$(CC)" AR="$(AR) r" RANLIB="$(RANLIB)"
+SB2 = CC="$(CC)" AR="$(AR)" RANLIB="$(RANLIB)"
 
 
 ifneq (,$(DEBUG))

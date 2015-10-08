@@ -1,0 +1,13 @@
+--- src/ssl/ssl_lib.c.orig	2015-06-11 16:18:31.000000000 +0200
++++ src/ssl/ssl_lib.c	2015-09-26 15:15:57.644429663 +0200
+@@ -1635,6 +1635,10 @@
+      */
+     ret->options |= SSL_OP_LEGACY_SERVER_CONNECT;
+ 
++    /* Palm-specific extension... */
++    SSL_CTX_load_verify_locations(ret, NULL, "/var/ssl/trustedcerts");
++    SSL_CTX_set_cipher_list(ret, "ALL:!LOW:!EXP:!ADH:!IDEA:@STRENGTH");
++
+     return (ret);
+  err:
+     SSLerr(SSL_F_SSL_CTX_NEW, ERR_R_MALLOC_FAILURE);
