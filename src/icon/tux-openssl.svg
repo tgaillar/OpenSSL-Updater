@@ -16,7 +16,7 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="tux-openssl.svg"
-   inkscape:export-filename="/home/thibaud/SOFT/openssl-updater-webos/icon/tux-openssl_256x256.png"
+   inkscape:export-filename="tux-openssl_256x256.png"
    inkscape:export-xdpi="38.348087"
    inkscape:export-ydpi="38.348087">
   <defs
@@ -180,9 +180,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.99050634"
-     inkscape:cx="306.00004"
-     inkscape:cy="297.99999"
+     inkscape:zoom="1.0419228"
+     inkscape:cx="300.28452"
+     inkscape:cy="300.40613"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -211,7 +211,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -220,64 +220,70 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-779.43097,-772.34985)">
-    <rect
-       style="fill:none;stroke:none"
-       id="rect2862"
-       width="600.56903"
-       height="600.01233"
-       x="779.43097"
-       y="772.34985"
-       inkscape:export-filename=""
-       inkscape:export-xdpi="38.360001"
-       inkscape:export-ydpi="38.360001" />
     <g
-       id="g3080"
-       transform="matrix(1.0479292,0,0,1.0479292,-65.743955,-36.38607)">
-      <image
-         width="532.70923"
-         height="248.849"
-         xlink:href="file:///home/thibaud/SOFT/openssl-updater-webos/icon/openssl-Open.png"
-         id="image3015"
-         x="858.7218"
-         y="759.16211" />
-      <image
-         transform="matrix(0,1,-1,0,0,0)"
-         width="406.93814"
-         height="194.44693"
-         xlink:href="file:///home/thibaud/SOFT/openssl-updater-webos/icon/openssl-SSL.png"
-         id="image3026"
-         x="947.68408"
-         y="-1391.431" />
-    </g>
-    <g
-       id="g3074">
-      <image
+       id="g4618">
+      <rect
          inkscape:export-ydpi="38.360001"
          inkscape:export-xdpi="38.360001"
-         inkscape:export-filename="/home/thibaud/Pictures/linphone-webostux-medium.png"
-         xlink:href="file:///home/thibaud/SOFT/openssl-updater-webos/icon/Tux_251x256.png"
-         width="450.99905"
-         height="459.98309"
-         id="image2960"
-         x="802.2821"
-         y="931.17902" />
+         inkscape:export-filename=""
+         y="772.34985"
+         x="779.43097"
+         height="600.01233"
+         width="600.56903"
+         id="rect2862"
+         style="fill:none;stroke:none" />
       <g
-         transform="matrix(1.2885837,0,0,1.2885837,-657.04959,-395.37537)"
-         id="g3825">
+         transform="matrix(1.0479292,0,0,1.0479292,-65.743955,-36.38607)"
+         id="g3080">
         <image
-           y="1173.1621"
-           x="1119.431"
-           id="image3037"
-           xlink:href="file:///home/thibaud/SOFT/openssl-updater-webos/icon/Pre_56x94.png"
-           height="94"
-           width="56" />
-        <rect
-           style="fill:#00d0ff;fill-opacity:1;fill-rule:evenodd;stroke:none"
-           id="rect3045"
-           width="42.537792"
-           height="58.805183"
-           x="1126.4423"
-           y="1189.3712" />
+           sodipodi:absref="/home/thibaud/SOFT/OpenSSL-Updater/src/icon/openssl-Open.png"
+           xlink:href="openssl-Open.png"
+           width="532.70923"
+           height="248.849"
+           id="image3015"
+           x="858.7218"
+           y="759.16211" />
+        <image
+           sodipodi:absref="/home/thibaud/SOFT/OpenSSL-Updater/src/icon/openssl-SSL.png"
+           xlink:href="openssl-SSL.png"
+           transform="matrix(0,1,-1,0,0,0)"
+           width="406.93814"
+           height="194.44693"
+           id="image3026"
+           x="947.68408"
+           y="-1391.431" />
+      </g>
+      <g
+         id="g3074">
+        <image
+           sodipodi:absref="/home/thibaud/SOFT/OpenSSL-Updater/src/icon/Tux_251x256.png"
+           xlink:href="Tux_251x256.png"
+           inkscape:export-ydpi="38.360001"
+           inkscape:export-xdpi="38.360001"
+           width="450.99905"
+           height="459.98309"
+           id="image2960"
+           x="802.2821"
+           y="931.17902" />
+        <g
+           id="g3825"
+           transform="matrix(1.2885837,0,0,1.2885837,-657.04959,-395.37537)">
+          <image
+             sodipodi:absref="/home/thibaud/SOFT/OpenSSL-Updater/src/icon/Pre_56x94.png"
+             xlink:href="Pre_56x94.png"
+             y="1173.1621"
+             x="1119.431"
+             id="image3037"
+             height="94"
+             width="56" />
+          <rect
+             y="1189.3712"
+             x="1126.4423"
+             height="58.805183"
+             width="42.537792"
+             id="rect3045"
+             style="fill:#00d0ff;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+        </g>
       </g>
     </g>
   </g>
