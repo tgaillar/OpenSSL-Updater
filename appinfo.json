@@ -1,7 +1,7 @@
 {
   "title": "OpenSSL Updater",
   "id": "org.webosinternals.openssl-updater",
-  "version": "0.9.8-5",
+  "version": "0.9.8-6",
   "vendor": "WebOS Internals <support@webos-internals.org>, Thibaud Gaillard <thibaud.gaillard@gmail.com>",
 
   "type": "web",
@@ -14,6 +14,9 @@
   "message": "OpenSSL-Updater brings the latest OpenSSL 0.9.8 release to your webOS smartphone/tablet, directly patching the system binaries (not to be confused with optware version that gets installed in /opt).</b><br/><br/>Simply uninstall this application to return your device to its original, unpatched state.<br><br><b>A system reboot is required after installation/removal, as running programs will see their OpenSSL dynamic libraries change (and most certainly crash). This is automagically performed by the end of the installation process.",
 
   "changeLog": [
+    { "version" : "0.9.8-6",
+      "log" : [ "Reset error indicator in post-install script when MD5 sum checks have failed and FORCE_INSTALL=1, or the backup operation will just stupidly fail..." ]
+    },
     { "version" : "0.9.8-5",
       "log" : [ "Forcing update installation for now (it looks like some devices -- 3.0.[45] TP -- have discrepancies between installed OpenSSL files and their reference checksum in /md5sums.gz, an OTA issue???)" ]
     },

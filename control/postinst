@@ -38,6 +38,7 @@ if [ "${error}" = "1" ] ; then
         exit 1
     else
         echo "Device OpenSSL is not in factory condition, installing replacement anyway..."
+	error=0
     fi
 fi
 
